@@ -1,12 +1,13 @@
 package com.dsjh.btd.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class indexController {
-    @RequestMapping("/")
+
+    @GetMapping("/")
     public String index(){
-        return "나와보시죠";
+        return "index";
     }
 }

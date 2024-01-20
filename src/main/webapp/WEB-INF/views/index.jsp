@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: dadomee
-  Date: 2024-01-16
-  Time: 오후 10:30
+  User: dasomjin
+  Date: 1/18/24
+  Time: 3:50 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1> 나와라 팔공팔공 </h1>
+    <h1> 나오십쇼 </h1>
 </body>
 </html>
