@@ -203,25 +203,27 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                        <span class="menu-title">학사관리</span>
+                        <span class="menu-title">학생 관리</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="main.jsp">학생관리</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="main.jsp">학과관리</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="main.jsp">재학,복학,휴학 관리</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="main.jsp">성적 관리</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="ui-basic">
-                        <span class="menu-title">등록</span>
+                        <span class="menu-title">관리자 등록</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-contacts menu-icon"></i>
                     </a>
                     <div class="collapse" id="insert_tab">
                         <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="main.jsp">학과 등록</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="main.jsp">교수 등록</a></li>
                             <li class="nav-item"> <a class="nav-link" href="main.jsp">관리자 아이피 등록</a></li>
                             <li class="nav-item"> <a class="nav-link" href="main.jsp">교직원 등록</a></li>
                         </ul>
@@ -535,44 +537,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Recent Updates</h4>
-                                <div class="d-flex">
-                                    <div class="d-flex align-items-center me-4 text-muted font-weight-light">
-                                        <i class="mdi mdi-account-outline icon-sm me-2"></i>
-                                        <span>jack Menqu</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-muted font-weight-light">
-                                        <i class="mdi mdi-clock icon-sm me-2"></i>
-                                        <span>October 3rd, 2018</span>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-6 pe-1">
-                                        <img src="../bootstrap/admin/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                                        <img src="../bootstrap/admin/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
-                                    </div>
-                                    <div class="col-6 ps-1">
-                                        <img src="../bootstrap/admin/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                                        <img src="../bootstrap/admin/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
-                                    </div>
-                                </div>
-                                <div class="d-flex mt-5 align-items-top">
-                                    <img src="../bootstrap/admin/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image">
-                                    <div class="mb-0 flex-grow">
-                                        <h5 class="me-2 mb-2">School Website - Authentication Module.</h5>
-                                        <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <i class="mdi mdi-heart-outline text-muted"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- content-wrapper ends -->
