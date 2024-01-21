@@ -13,45 +13,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>대학교 관리자 페이지</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../bootstrap/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../bootstrap/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../bootstrap/admin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../bootstrap/admin/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../bootstrap/css/style.css">
+    <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../bootstrap/images/favicon.ico" />
+    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.ico" />
 </head>
 <body>
-<div class="container-scroller">
-    <div class="row p-0 m-0 proBanner" id="proBanner">
-        <div class="col-md-12 p-0 m-0">
-            <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
-                <div class="ps-lg-1">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
-                        <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                    <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/"><i class="mdi mdi-home me-3 text-white"></i></a>
-                    <button id="bannerClose" class="btn border-0 p-0">
-                        <i class="mdi mdi-close text-white me-0"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin/main"><img src="../bootstrap/images/logo.svg" alt="logo" /></a>
-            <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin/main"><img src="../bootstrap/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin/main"><img src="../bootstrap/admin/images/logo.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin/main"><img src="../bootstrap/admin/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -71,19 +52,19 @@
                 <li class="nav-item nav-profile dropdown">
                     <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="nav-profile-img">
-                            <img src="../bootstrap/images/faces/face1.jpg" alt="image">
+                            <img src="../bootstrap/admin/images/faces/face1.jpg" alt="image">
                             <span class="availability-status online"></span>
                         </div>
                         <div class="nav-profile-text">
-                            <p class="mb-1 text-black">David Greymaax</p>
+                            <p class="mb-1 text-black">내 이름</p>
                         </div>
                     </a>
                     <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                         <a class="dropdown-item" href="#">
-                            <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
+                            <i class="mdi mdi-cached me-2 text-success"></i> 내 정보 수정 </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
-                            <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+                            <i class="mdi mdi-logout me-2 text-primary"></i> 로그아웃 </a>
                     </div>
                 </li>
                 <li class="nav-item d-none d-lg-block full-screen-link">
@@ -101,7 +82,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="../bootstrap/images/faces/face4.jpg" alt="image" class="profile-pic">
+                                <img src="../bootstrap/admin/images/faces/face4.jpg" alt="image" class="profile-pic">
                             </div>
                             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                                 <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -111,7 +92,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="../bootstrap/images/faces/face2.jpg" alt="image" class="profile-pic">
+                                <img src="../bootstrap/admin/images/faces/face2.jpg" alt="image" class="profile-pic">
                             </div>
                             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                                 <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -121,7 +102,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="../bootstrap/faces/face3.jpg" alt="image" class="profile-pic">
+                                <img src="../bootstrap/admin/faces/face3.jpg" alt="image" class="profile-pic">
                             </div>
                             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                                 <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -201,9 +182,9 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item nav-profile">
-                    <a href="myPage" class="nav-link">
+                    <a href="admin/myPage" class="nav-link">
                         <div class="nav-profile-image">
-                            <img src="../bootstrap/images/faces/face1.jpg" alt="profile">
+                            <img src="../bootstrap/admin/images/faces/face1.jpg" alt="profile">
                             <span class="login-status online"></span>
                             <!--change to offline or busy as needed-->
                         </div>
@@ -234,14 +215,21 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="main.jsp">
-                        <span class="menu-title">Icons</span>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="ui-basic">
+                        <span class="menu-title">등록</span>
+                        <i class="menu-arrow"></i>
                         <i class="mdi mdi-contacts menu-icon"></i>
                     </a>
+                    <div class="collapse" id="insert_tab">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="main.jsp">관리자 아이피 등록</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="main.jsp">교직원 등록</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="main.jsp">
-                        <span class="menu-title">Forms</span>
+                        <span class="menu-title">바보</span>
                         <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                     </a>
                 </li>
@@ -301,19 +289,12 @@
                   <i class="mdi mdi-home"></i>
                 </span> Dashboard
                     </h3>
-                    <nav aria-label="breadcrumb">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
                 <div class="row">
                     <div class="col-md-4 stretch-card grid-margin">
                         <div class="card bg-gradient-danger card-img-holder text-white">
                             <div class="card-body">
-                                <img src="../bootstrap/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                                <img src="../bootstrap/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                                 <h4 class="font-weight-normal mb-3">전체 신입생 수 <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                                 </h4>
                                 <h2 class="mb-5">2,100명</h2>
@@ -324,7 +305,7 @@
                     <div class="col-md-4 stretch-card grid-margin">
                         <div class="card bg-gradient-info card-img-holder text-white">
                             <div class="card-body">
-                                <img src="../bootstrap/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                                <img src="../bootstrap/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                                 <h4 class="font-weight-normal mb-3">컴퓨터 과학과 신입생 수<i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                                 </h4>
                                 <h2 class="mb-5">45,6334</h2>
@@ -335,140 +316,11 @@
                     <div class="col-md-4 stretch-card grid-margin">
                         <div class="card bg-gradient-success card-img-holder text-white">
                             <div class="card-body">
-                                <img src="../bootstrap/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                                <img src="../bootstrap/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                                 <h4 class="font-weight-normal mb-3">Visitors Online <i class="mdi mdi-diamond mdi-24px float-right"></i>
                                 </h4>
                                 <h2 class="mb-5">95,5741</h2>
                                 <h6 class="card-text">Increased by 5%</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-7 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="clearfix">
-                                    <h4 class="card-title float-left">Visit And Sales Statistics</h4>
-                                    <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
-                                </div>
-                                <canvas id="visit-sale-chart" class="mt-4"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Traffic Sources</h4>
-                                <canvas id="traffic-chart"></canvas>
-                                <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 grid-margin">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Recent Tickets</h4>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th> Assignee </th>
-                                            <th> Subject </th>
-                                            <th> Status </th>
-                                            <th> Last Update </th>
-                                            <th> Tracking ID </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <img src="../bootstrap/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
-                                            </td>
-                                            <td> Fund is not recieved </td>
-                                            <td>
-                                                <label class="badge badge-gradient-success">DONE</label>
-                                            </td>
-                                            <td> Dec 5, 2017 </td>
-                                            <td> WD-12345 </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../bootstrap/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson
-                                            </td>
-                                            <td> High loading time </td>
-                                            <td>
-                                                <label class="badge badge-gradient-warning">PROGRESS</label>
-                                            </td>
-                                            <td> Dec 12, 2017 </td>
-                                            <td> WD-12346 </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../bootstrap/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel
-                                            </td>
-                                            <td> Website down for one week </td>
-                                            <td>
-                                                <label class="badge badge-gradient-info">ON HOLD</label>
-                                            </td>
-                                            <td> Dec 16, 2017 </td>
-                                            <td> WD-12347 </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../bootstrap/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
-                                            </td>
-                                            <td> Loosing control on server </td>
-                                            <td>
-                                                <label class="badge badge-gradient-danger">REJECTED</label>
-                                            </td>
-                                            <td> Dec 3, 2017 </td>
-                                            <td> WD-12348 </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Recent Updates</h4>
-                                <div class="d-flex">
-                                    <div class="d-flex align-items-center me-4 text-muted font-weight-light">
-                                        <i class="mdi mdi-account-outline icon-sm me-2"></i>
-                                        <span>jack Menqu</span>
-                                    </div>
-                                    <div class="d-flex align-items-center text-muted font-weight-light">
-                                        <i class="mdi mdi-clock icon-sm me-2"></i>
-                                        <span>October 3rd, 2018</span>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-6 pe-1">
-                                        <img src="../bootstrap/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                                        <img src="../bootstrap/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
-                                    </div>
-                                    <div class="col-6 ps-1">
-                                        <img src="../bootstrap/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                                        <img src="../bootstrap/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
-                                    </div>
-                                </div>
-                                <div class="d-flex mt-5 align-items-top">
-                                    <img src="../bootstrap/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image">
-                                    <div class="mb-0 flex-grow">
-                                        <h5 class="me-2 mb-2">School Website - Authentication Module.</h5>
-                                        <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <i class="mdi mdi-heart-outline text-muted"></i>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -615,6 +467,113 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 grid-margin">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Recent Tickets</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th> Assignee </th>
+                                            <th> Subject </th>
+                                            <th> Status </th>
+                                            <th> Last Update </th>
+                                            <th> Tracking ID </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="../bootstrap/admin/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
+                                            </td>
+                                            <td> Fund is not recieved </td>
+                                            <td>
+                                                <label class="badge badge-gradient-success">DONE</label>
+                                            </td>
+                                            <td> Dec 5, 2017 </td>
+                                            <td> WD-12345 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="../bootstrap/admin/images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson
+                                            </td>
+                                            <td> High loading time </td>
+                                            <td>
+                                                <label class="badge badge-gradient-warning">PROGRESS</label>
+                                            </td>
+                                            <td> Dec 12, 2017 </td>
+                                            <td> WD-12346 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="../bootstrap/admin/images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel
+                                            </td>
+                                            <td> Website down for one week </td>
+                                            <td>
+                                                <label class="badge badge-gradient-info">ON HOLD</label>
+                                            </td>
+                                            <td> Dec 16, 2017 </td>
+                                            <td> WD-12347 </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="../bootstrap/admin/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
+                                            </td>
+                                            <td> Loosing control on server </td>
+                                            <td>
+                                                <label class="badge badge-gradient-danger">REJECTED</label>
+                                            </td>
+                                            <td> Dec 3, 2017 </td>
+                                            <td> WD-12348 </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Recent Updates</h4>
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center me-4 text-muted font-weight-light">
+                                        <i class="mdi mdi-account-outline icon-sm me-2"></i>
+                                        <span>jack Menqu</span>
+                                    </div>
+                                    <div class="d-flex align-items-center text-muted font-weight-light">
+                                        <i class="mdi mdi-clock icon-sm me-2"></i>
+                                        <span>October 3rd, 2018</span>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-6 pe-1">
+                                        <img src="../bootstrap/admin/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                                        <img src="../bootstrap/admin/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
+                                    </div>
+                                    <div class="col-6 ps-1">
+                                        <img src="../bootstrap/admin/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                                        <img src="../bootstrap/admin/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-5 align-items-top">
+                                    <img src="../bootstrap/admin/images/faces/face3.jpg" class="img-sm rounded-circle me-3" alt="image">
+                                    <div class="mb-0 flex-grow">
+                                        <h5 class="me-2 mb-2">School Website - Authentication Module.</h5>
+                                        <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <i class="mdi mdi-heart-outline text-muted"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:partials/_footer.html -->
@@ -632,20 +591,20 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
-<script src="../bootstrap/vendors/js/vendor.bundle.base.js"></script>
+<script src="../bootstrap/admin/vendors/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
-<script src="../bootstrap/vendors/chart.js/Chart.min.js"></script>
-<script src="../bootstrap/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="../bootstrap/admin/vendors/chart.js/Chart.min.js"></script>
+<script src="../bootstrap/admin/js/jquery.cookie.js" type="text/javascript"></script>
 <!-- End plugin js for this page -->
 <!-- inject:js -->
-<script src="../bootstrap/js/off-canvas.js"></script>
-<script src="../bootstrap/js/hoverable-collapse.js"></script>
-<script src="../bootstrap/js/misc.js"></script>
+<script src="../bootstrap/admin/js/off-canvas.js"></script>
+<script src="../bootstrap/admin/js/hoverable-collapse.js"></script>
+<script src="../bootstrap/admin/js/misc.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
-<script src="../bootstrap/js/dashboard.js"></script>
-<script src="../bootstrap/js/todolist.js"></script>
+<script src="../bootstrap/admin/js/dashboard.js"></script>
+<script src="../bootstrap/admin/js/todolist.js"></script>
 <!-- End custom js for this page -->
 </body>
 </html>

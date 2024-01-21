@@ -13,25 +13,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Purple Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../bootstrap/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../bootstrap/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../bootstrap/admin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../bootstrap/admin/admin/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../bootstrap/css/style.css">
+    <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../bootstrap/images/favicon.ico" />
+    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.ico" />
 </head>
 <body>
 <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo" href="../../index.html"><img src="../bootstrap/images/logo.svg" alt="logo" /></a>
-            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../bootstrap/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo" href="../../index.html"><img src="../bootstrap/admin/images/logo.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../bootstrap/admin/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -51,7 +51,7 @@
                 <li class="nav-item nav-profile dropdown">
                     <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                         <div class="nav-profile-img">
-                            <img src="../bootstrap/images/faces/face1.jpg" alt="image">
+                            <img src="../bootstrap/admin/images/faces/face1.jpg" alt="image">
                             <span class="availability-status online"></span>
                         </div>
                         <div class="nav-profile-text">
@@ -81,7 +81,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="../bootstrap/images/faces/face4.jpg" alt="image" class="profile-pic">
+                                <img src="../bootstrap/admin/images/faces/face4.jpg" alt="image" class="profile-pic">
                             </div>
                             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                                 <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -91,7 +91,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="../bootstrap/images/faces/face2.jpg" alt="image" class="profile-pic">
+                                <img src="../bootstrap/admin/images/faces/face2.jpg" alt="image" class="profile-pic">
                             </div>
                             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                                 <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -101,7 +101,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item">
                             <div class="preview-thumbnail">
-                                <img src="../bootstrap/images/faces/face3.jpg" alt="image" class="profile-pic">
+                                <img src="../bootstrap/admin/images/faces/face3.jpg" alt="image" class="profile-pic">
                             </div>
                             <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                                 <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -183,7 +183,7 @@
                 <li class="nav-item nav-profile">
                     <a href="#" class="nav-link">
                         <div class="nav-profile-image">
-                            <img src="../bootstrap/images/faces/face1.jpg" alt="profile">
+                            <img src="../bootstrap/admin/images/faces/face1.jpg" alt="profile">
                             <span class="login-status online"></span>
                             <!--change to offline or busy as needed-->
                         </div>
@@ -292,14 +292,14 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
-<script src="../bootstrap/vendors/js/vendor.bundle.base.js"></script>
+<script src="../bootstrap/admin/vendors/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page -->
 <!-- End plugin js for this page -->
 <!-- inject:js -->
-<script src="../bootstrap/js/off-canvas.js"></script>
-<script src="../bootstrap/js/hoverable-collapse.js"></script>
-<script src="../bootstrap/js/misc.js"></script>
+<script src="../bootstrap/admin/js/off-canvas.js"></script>
+<script src="../bootstrap/admin/js/hoverable-collapse.js"></script>
+<script src="../bootstrap/admin/js/misc.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page -->
 <!-- End custom js for this page -->
