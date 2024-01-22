@@ -35,6 +35,8 @@
     <!-- Template Main CSS File -->
     <link href="../bootstrap/mainPage/css/style.css" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="../bootstrap/admin/vendors/mdi/css/materialdesignicons.min.css">
     <!-- =======================================================
     * Template Name: Resi
     * Updated: Jan 09 2024 with Bootstrap v5.3.2
@@ -42,15 +44,23 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
 </head>
 
 <body>
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top">
+    <ul class="navbar-nav navbar-nav-right" style="position : relative; left : 1400px;">
+        <li class="nav-item nav-logout d-none d-lg-block">
+            <a class="nav-link" href="#">
+                <i class="mdi mdi-power">&nbsp;sign in</i>
+            </a>
+        </li>
+    </ul>
     <div class="container d-flex align-items-center justify-content-between">
 
-        <h1 class="logo"><a href="mainPage">KNOU computer science</a></h1>
+        <h1 class="logo"><a href="/">KNOU computer science</a></h1>
 
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -58,13 +68,23 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">학과소개</a></li>
-                <li><a class="nav-link scrollto" href="#about">교과정보</a></li>
-                <li><a class="nav-link scrollto" href="#services">학습정보</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">교수진소개</a></li>
-                <li><a class="nav-link scrollto" href="#team">지역대학</a></li>
+                <li class="dropdown"><a href="#"><span>교과정보</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">전공소개</a></li>
+                        <li><a href="#">교과과정</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>학습정보</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">학과일정</a></li>
+                        <li><a href="#">공지사항</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto " href="#">교수진소개</a></li>
+                <li><a class="nav-link scrollto" href="#">지역대학</a></li>
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Drop Down 1</a></li>
+                        <li><a href="#"></a></li>
                         <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="#">Deep Drop Down 1</a></li>
