@@ -1,4 +1,4 @@
 package com.dsjh.btd.dto;
 
-public class studentDTO {
+public class StudentDTO {
 }

@@ -9,12 +9,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-<jsp:include page="top.jsp" flush="false"/>
+<%@include file="top.jsp"%>
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="card">
-                <div class = "card-body">
+                <div class ="card-body">
                     <h4 class="card-title">나의 정보</h4>
                     <p class ="card-description">내 정보를 확인하세요.</p>
                     <table class="table table-hover">
@@ -28,12 +28,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${myPage}" var="myPage">
+                        <c:forEach var="myPage" items="${myPage}">
                         <tr>
                             <td>${myPage.staff_name}</td>
+                            <td>${myPage.staff_birth}</td>
                             <td>${myPage.staff_address}</td>
                             <td>${myPage.staff_tel}</td>
                             <td><label class="badge badge-danger">${myPage.staff_status}</label></td>
+
                         </tr>
                         </c:forEach>
                         </tbody>

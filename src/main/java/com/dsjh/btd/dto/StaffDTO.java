@@ -1,11 +1,14 @@
 package com.dsjh.btd.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
-public class staffDTO{
+@Getter
+@Setter
+public class StaffDTO {
     private int staff_id;               //교직원 아이디
     private String staff_name;          // 교직원 이름
     private String staff_birth;         // 교직원 생년월일
