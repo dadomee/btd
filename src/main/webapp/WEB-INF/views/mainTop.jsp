@@ -67,11 +67,11 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">학과소개</a></li>
+                <li><a class="nav-link scrollto active" href="main/departmentInfo">학과소개</a></li>
                 <li class="dropdown"><a href="#"><span>교과정보</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">전공소개</a></li>
-                        <li><a href="#">교과과정</a></li>
+                        <li><a href="main/subjectDetail">교과과정</a></li>
+                        <li><a href="main/subjectInfo">전공교과소개</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>학습정보</span> <i class="bi bi-chevron-down"></i></a>
@@ -105,6 +105,14 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-
     </div>
 </header><!-- End Header -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin : 0 auto">
+                <img src="../bootstrap/mainPage/img/hero-img.png" class="img-fluid" alt="학교사진">
+            </div>
+        </div>
+    </div>
+</section><!-- End Hero -->
