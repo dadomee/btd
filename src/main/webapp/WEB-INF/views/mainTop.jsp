@@ -51,7 +51,7 @@
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
-    <ul class="navbar-nav navbar-nav-right" style="position : relative; left : 1400px;">
+    <ul class="navbar-nav navbar-nav-right" style="position : relative; left : 1500px;">
         <li class="nav-item nav-logout d-none d-lg-block">
             <a class="nav-link" href="#">
                 <i class="mdi mdi-power">&nbsp;sign in</i>
@@ -76,29 +76,30 @@
                 </li>
                 <li class="dropdown"><a href="#"><span>학습정보</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
+                        <li><a href="#">구분과목</a></li>
                         <li><a href="#">학과일정</a></li>
-                        <li><a href="#">공지사항</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto " href="#">교수진소개</a></li>
+                <li><a class="nav-link scrollto" href="#">공지사항</a></li>
                 <li><a class="nav-link scrollto" href="#">지역대학</a></li>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#"></a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li>
+<%--                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>--%>
+<%--                    <ul>--%>
+<%--                        <li><a href="#"></a></li>--%>
+<%--                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>--%>
+<%--                            <ul>--%>
+<%--                                <li><a href="#">Deep Drop Down 1</a></li>--%>
+<%--                                <li><a href="#">Deep Drop Down 2</a></li>--%>
+<%--                                <li><a href="#">Deep Drop Down 3</a></li>--%>
+<%--                                <li><a href="#">Deep Drop Down 4</a></li>--%>
+<%--                                <li><a href="#">Deep Drop Down 5</a></li>--%>
+<%--                            </ul>--%>
+<%--                        </li>--%>
+<%--                        <li><a href="#">Drop Down 2</a></li>--%>
+<%--                        <li><a href="#">Drop Down 3</a></li>--%>
+<%--                        <li><a href="#">Drop Down 4</a></li>--%>
+<%--                    </ul>--%>
+<%--                </li>--%>
 <%--                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>--%>
 <%--                <li><a class="getstarted scrollto" href="#about">Get Started</a></li>--%>
             </ul>
