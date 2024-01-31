@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -20,11 +22,16 @@ public class AdminController {
     }
 
     @GetMapping("admin/myPage")
-    public ModelAndView adminMyPage(){
-        List<StaffDTO> slist = adminService.myPagelist();
+    public ModelAndView adminMyPage() {
         ModelAndView mav = new ModelAndView();
+        List<Map<String, String>> slist = new ArrayList<>();
+        slist = adminService.myPageList();
+
+        for(Map<String, String> map : slist) {
+            System.out.println(map.get("staff_name"));
+        }
+
         mav.addObject("myPage", slist);
-        System.out.println("리스트 값 "+ slist);
         mav.setViewName("admin/myPage");
         return mav;
     }
