@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dsjh.btd.service.AdminService">
-    <select id="selectMyPage" resultType="StaffDTO">
+<mapper namespace="com.dsjh.btd.dao.AdminDAO">
+    <select id="myPageList" resultType="Map">
         select * from staff_tb;
     </select>
 </mapper>
