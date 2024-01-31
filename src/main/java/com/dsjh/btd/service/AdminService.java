@@ -1,5 +1,6 @@
 package com.dsjh.btd.service;
 
+import com.dsjh.btd.service.impl.AdminMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,11 @@ import com.dsjh.btd.dto.StaffDTO;
 import java.util.List;
 
 @Service
-@Mapper
 public class AdminService {
+    @Autowired AdminMapper adminMapper;
 
-    @Autowired  SqlSession sqlSession;
-
-        public List<StaffDTO> myPagelist(){
-            return sqlSession.selectList("selectMyPage");
-        }
+    public List<StaffDTO> selectMyPage() {
+        return adminMapper.selectMyPage();
+    }
 }
+

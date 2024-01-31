@@ -12,8 +12,13 @@ import java.util.List;
 
 @Controller
 public class AdminController {
+    private final AdminService adminService;
+
     @Autowired
-    private AdminService adminService;
+    public AdminController(AdminService adminService){
+        this.adminService = adminService;
+    }
+
     @GetMapping("admin")
     public String adminMain(){
         return "admin/main";
@@ -21,7 +26,7 @@ public class AdminController {
 
     @GetMapping("admin/myPage")
     public ModelAndView adminMyPage(){
-        List<StaffDTO> slist = adminService.myPagelist();
+        List<StaffDTO> slist = adminService.selectMyPage();
         ModelAndView mav = new ModelAndView();
         mav.addObject("myPage", slist);
         System.out.println("리스트 값 "+ slist);
