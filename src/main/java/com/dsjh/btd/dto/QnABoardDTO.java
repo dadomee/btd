@@ -20,7 +20,7 @@ public class QnABoardDTO {
     private String qBoard_file2;
     private String qBoard_file3;
     private String qBoard_file4;
-    private int re_level;
-    private int re_step;
-    private int re_group;
+    private int qBoard_re_level;
+    private int qBoard_re_step;
+    private int qBoard_re_group;
 }

@@ -1,19 +1,23 @@
 package com.dsjh.btd.service;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import com.dsjh.btd.dto.StaffDTO;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
+import java.util.Map;
 
 @Service
-@Mapper
 public class AdminService {
 
-    @Autowired  SqlSession sqlSession;
+    private final SqlSessionTemplate sqlSession;
 
-        public List<StaffDTO> myPagelist(){
-            return sqlSession.selectList("selectMyPage");
-        }
+    public AdminService(SqlSessionTemplate sqlSession) {
+        this.sqlSession = sqlSession;
+    }
+
+    public List<StaffDTO> myPageList() {
+        return sqlSession.selectList("myPageList");
+    }
+
 }

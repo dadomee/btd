@@ -5,7 +5,7 @@
   time: 3:09 pm
   to change this template use file | settings | file templates.
 --%>
-<%@ page contentType="text/html;charset=utf-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- partial:partials/_footer.html -->
 <footer class="footer">
     <div class="container-fluid d-flex justify-content-between">

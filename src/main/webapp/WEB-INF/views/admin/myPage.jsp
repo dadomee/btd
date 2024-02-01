@@ -4,6 +4,7 @@
   Date: 1/19/24
   Time: 6:03 PM
   To change this template use File | Settings | File Templates.
+
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -31,7 +32,7 @@
                         <c:forEach var="myPage" items="${myPage}">
                         <tr>
                             <td>${myPage.staff_name}</td>
-                            <td>${myPage.staff_birth}</td>
+                             <td>${myPage.staff_birth}</td>
                             <td>${myPage.staff_address}</td>
                             <td>${myPage.staff_tel}</td>
                             <td><label class="badge badge-danger">${myPage.staff_status}</label></td>
@@ -44,5 +45,4 @@
                 </div>
             </div>
             <!-- content-wrapper ends -->
-
-<jsp:include page="bottom.jsp" flush="false"/>
+<%@include file="bottom.jsp"%>
