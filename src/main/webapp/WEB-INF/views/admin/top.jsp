@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dasomjin
@@ -60,8 +61,8 @@
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-cached me-2 text-success"></i> 내 정보 수정 </a>
+                    <a class="dropdown-item" href="${pageContext.request.contextPath}/">
+                        <i class="mdi mdi-cached me-2 text-success"></i> 학과 페이지 </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">
                         <i class="mdi mdi-logout me-2 text-primary"></i> 로그아웃 </a>
