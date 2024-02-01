@@ -76,7 +76,7 @@
                 </li>
                 <li class="dropdown"><a href="#"><span>학습정보</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">구분과목</a></li>
+                        <li><a href="#">학기별구분과목</a></li>
                         <li><a href="#">학과일정</a></li>
                     </ul>
                 </li>
@@ -107,12 +107,3 @@
         </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->
-<section id="hero" class="d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin : 0 auto">
-                <img src="../bootstrap/mainPage/img/hero-img.png" class="img-fluid" alt="학교사진">
-            </div>
-        </div>
-    </div>
-</section><!-- End Hero -->

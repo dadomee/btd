@@ -2,11 +2,14 @@ package com.dsjh.btd.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class QnABoardFileDTO {
     private int qb_file_id;
     private int qBoard_id;
