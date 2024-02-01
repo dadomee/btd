@@ -1,6 +1,8 @@
 package com.dsjh.btd.controller;
+
 import com.dsjh.btd.dto.StaffDTO;
 import com.dsjh.btd.service.AdminService;
+import jakarta.servlet.http.HttpServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +20,11 @@ public class AdminController {
     }
 
     @GetMapping("admin/myPage")
-    public ModelAndView adminMyPage() {
-        ModelAndView mav = new ModelAndView();
+    public ModelAndView adminMyPage(){
         List<StaffDTO> slist = adminService.myPageList();
+        ModelAndView mav = new ModelAndView();
         mav.addObject("myPage", slist);
-        mav.setViewName("admin/myPage");
+        mav.setViewName("/admin/myPage");
         return mav;
-
     }
 }
