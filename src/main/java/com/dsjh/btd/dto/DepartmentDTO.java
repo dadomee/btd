@@ -1,8 +1,11 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class DepartmentDTO {
     private int depart_id;
     private String depart_name;
