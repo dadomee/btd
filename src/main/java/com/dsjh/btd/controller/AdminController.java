@@ -24,5 +24,6 @@ public class AdminController {
         mav.addObject("myPage", slist);
         mav.setViewName("admin/myPage");
         return mav;
+
     }
 }
