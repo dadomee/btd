@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface AdminDAO {
-    public List<StaffDTO> myPageLis();
+    public List<StaffDTO> myPageList();
 }
