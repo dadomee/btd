@@ -1,23 +1,27 @@
 package com.dsjh.btd.service;
 
-import com.dsjh.btd.dao.AdminDAO;
 import com.dsjh.btd.dto.StaffDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dsjh.btd.dto.TestDTO;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class AdminService {
 
-    @Autowired
-    AdminDAO adminDAO;
+    private final SqlSessionTemplate sqlSession;
 
-    public List<Map<String, String>> myPageList() {
-        List<Map<String, String>> list = new ArrayList<>();
-        list = adminDAO.myPageList();
-        return list;
+    public AdminService(SqlSessionTemplate sqlSession) {
+        this.sqlSession = sqlSession;
+    }
+
+    public List<StaffDTO> myPageList() {
+        return sqlSession.selectList("myPageList");
+    }
+
+    public int insertTest(TestDTO dto) {
+        return sqlSession.insert("insertTest", dto);
     }
 }
