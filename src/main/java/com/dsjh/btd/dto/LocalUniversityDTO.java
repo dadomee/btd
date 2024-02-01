@@ -1,8 +1,12 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class LocalUniversityDTO {
     private int local_id;
     private String local_name;

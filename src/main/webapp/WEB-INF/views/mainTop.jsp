@@ -67,11 +67,11 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="main/departmentInfo">학과소개</a></li>
+                <li><a class="nav-link scrollto active" href="${pageContext.request.contextPath}/main/departmentInfo">학과소개</a></li>
                 <li class="dropdown"><a href="#"><span>교과정보</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="main/subjectDetail">교과과정</a></li>
-                        <li><a href="main/subjectInfo">전공교과소개</a></li>
+                        <li><a href="${pageContext.request.contextPath}/main/subjectDetail">교과과정</a></li>
+                        <li><a href="${pageContext.request.contextPath}/main/subjectInfo">전공교과소개</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>학습정보</span> <i class="bi bi-chevron-down"></i></a>

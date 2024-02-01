@@ -1,9 +1,14 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class DataBoardDTO {
     private int dBoard_id;
     private String dBoard_title;
