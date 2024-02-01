@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: dasomjin
@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +32,8 @@
 <!-- partial:partials/_navbar.html -->
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin/main"><img src="../bootstrap/admin/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin/main"><img src="../bootstrap/admin/images/logo-mini.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="admin/main"><img src="../bootstrap/admin/images/logo.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="admin/main"><img src="../bootstrap/admin/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -61,7 +61,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="${pageContext.request.contextPath}/">
+                    <a class="dropdown-item" href="/">
                         <i class="mdi mdi-cached me-2 text-success"></i> 학과 페이지 </a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">
@@ -177,13 +177,14 @@
         </button>
     </div>
 </nav>
+<!-- 사이드 바 -->
 <!-- partial -->
 <div class="container-fluid page-body-wrapper">
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
             <li class="nav-item nav-profile">
-                <a href="admin/myPage" class="nav-link">
+                <a href="${pageContext.request.contextPath}admin/myPage" class="nav-link">
                     <div class="nav-profile-image">
                         <img src="../bootstrap/admin/images/faces/face1.jpg" alt="profile">
                         <span class="login-status online"></span>

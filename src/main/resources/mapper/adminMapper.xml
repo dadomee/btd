@@ -3,10 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dsjh.btd.dao.AdminDAO">
-    <select id="myPageList" resultType="StaffDTO">
+    <select id="myPageList" resultType="map">
         SELECT * FROM staff_tb;
     </select>
-    <insert id="insertTest" parameterType="int">
-        INSERT INTO Test_tb (name, age) VALUE ('김재희', 29);
-    </insert>
 </mapper>

@@ -1,12 +1,11 @@
 package com.dsjh.btd.service;
 
 import com.dsjh.btd.dto.StaffDTO;
-import com.dsjh.btd.dto.TestDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AdminService {
@@ -21,7 +20,4 @@ public class AdminService {
         return sqlSession.selectList("myPageList");
     }
 
-    public int insertTest(TestDTO dto) {
-        return sqlSession.insert("insertTest", dto);
-    }
 }
