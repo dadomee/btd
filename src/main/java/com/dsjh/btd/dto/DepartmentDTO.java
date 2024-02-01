@@ -5,7 +5,7 @@ import lombok.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class DepartmentDTO {
     private int depart_id;
     private String depart_name;

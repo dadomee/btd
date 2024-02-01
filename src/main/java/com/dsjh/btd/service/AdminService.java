@@ -7,7 +7,6 @@ import java.util.List;
 
 @Service
 public class AdminService {
-
     private final SqlSessionTemplate sqlSession;
 
     public AdminService(SqlSessionTemplate sqlSession) {

@@ -1,10 +1,14 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class NoticeDTO {
     private int notice_id;
     private String notice_title;
