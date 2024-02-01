@@ -1,12 +1,13 @@
 package com.dsjh.btd.dao;
 
 import com.dsjh.btd.dto.StaffDTO;
-import org.apache.ibatis.annotations.Mapper;
+import com.dsjh.btd.dto.TestDTO;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
-@Mapper
+@Repository
 public interface AdminDAO {
-    public List<Map<String, String>> myPageList();
+    public List<StaffDTO> myPageList();
+    public int insertTest();
 }
