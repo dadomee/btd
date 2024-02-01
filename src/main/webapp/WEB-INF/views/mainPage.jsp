@@ -8,8 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="mainTop.jsp" flush="false"/>
 <!-- ======= Hero Section ======= -->
-<%--<section id="hero" class="d-flex align-items-center">--%>
-
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin : 0 auto">
+                <img src="../bootstrap/mainPage/img/hero-img.png" class="img-fluid" alt="학교사진">
+            </div>
+        </div>
+    </div>
 <%--    <div class="container">--%>
 <%--        <div class="row">--%>
 <%--            <div class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">--%>

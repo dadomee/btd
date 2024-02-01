@@ -2,6 +2,7 @@ package com.dsjh.btd.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -9,6 +10,8 @@ import java.util.Date;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class QnABoardDTO {
     private int qBoard_id;
     private String qBoard_title;

@@ -2,11 +2,14 @@ package com.dsjh.btd.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+
 public class ProfessorDTO {
     private int prof_id;
     private String prof_name;
