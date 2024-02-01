@@ -1,8 +1,12 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class StudentGradeDTO {
     private int stu_grade_id;
     private int grade_id;

@@ -1,9 +1,14 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class DepartmentScheduleDTO {
     private int schedule_id;
     private Date schedule_date;
