@@ -1,8 +1,12 @@
 package com.dsjh.btd.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class NoticeFileDTO {
     private int notice_file_id;
     private int notice_id;

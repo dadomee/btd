@@ -44,5 +44,4 @@
                 </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
 <%@include file="bottom.jsp"%>

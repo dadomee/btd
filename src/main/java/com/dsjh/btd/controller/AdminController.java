@@ -1,5 +1,4 @@
 package com.dsjh.btd.controller;
-
 import com.dsjh.btd.dto.StaffDTO;
 import com.dsjh.btd.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +13,16 @@ import java.util.List;
 public class AdminController {
     @Autowired
     private AdminService adminService;
+
     @GetMapping("/admin")
-    public String adminMain(){
+    public String adminMain() {
         return "admin/main";
     }
 
     @GetMapping("/admin/myPage")
     public ModelAndView adminMyPage() {
         ModelAndView mav = new ModelAndView();
-        List<StaffDTO> slist =adminService.myPageList();
+        List<StaffDTO> slist = adminService.myPageList();
         mav.addObject("myPage", slist);
         mav.setViewName("/admin/myPage");
         return mav;

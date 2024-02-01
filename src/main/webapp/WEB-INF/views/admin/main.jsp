@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="top.jsp" flush="false"/>
+<%@ include file="top.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
         <!-- partial -->
@@ -267,5 +267,4 @@
                 </div>
                 </div>
 
-            <!-- content-wrapper ends -->
-<jsp:include page="bottom.jsp" flush="false"/>
+<%@ include file="bottom.jsp"%>
