@@ -217,17 +217,34 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="insert_tab">
-                    <span class="menu-title">관리자 등록</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-title">등록</span>
                     <i class="menu-arrow"></i>
                     <i class="mdi mdi-contacts menu-icon"></i>
                 </a>
                 <div class="collapse" id="insert_tab">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepartment">학과 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeSubject">과목 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProfessor">교수 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeIP">관리자 아이피 등록</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">교직원 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeStaff">교직원 등록</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#list_tab" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-title">목록</span>
+                    <i class="menu-arrow"></i>
+                    <i class="mdi mdi-contacts menu-icon"></i>
+                </a>
+                <div class="collapse" id="list_tab">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listDepartment">학과 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listSubject">과목 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listProfessor">교수 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listIP">관리자 아이피 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listStaff">교직원 목록</a></li>
                     </ul>
                 </div>
             </li>
@@ -238,14 +255,14 @@
                 </a>
                 <div class="collapse" id="classAndTest">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepart">수강 신청 관리</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProf">시험 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageRegister">수강 신청 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageTest">시험 관리</a></li>
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#general-pages_" aria-expanded="false" aria-controls="general-pages_">
-                        <span class="menu-title">등록/장학</span>
+                        <span class="menu-title">학사 등록/장학</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-medical-bag menu-icon"></i>
                     </a>
