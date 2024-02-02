@@ -19,8 +19,9 @@ public class SubjectDTO {
     private int depart_id;
     private String sub_type;
     private int sub_semester;
-    private int sub_year;
-    private int sub_grade;
+    private int sub_year; //학년
+    private int sub_grade; //이수학점
     private String sub_status;
     private Date sub_regdate;
+    private String sub_info;
 }
