@@ -45,7 +45,7 @@
                     <div class="input-group-prepend bg-transparent">
                         <i class="input-group-text border-0 mdi mdi-magnify"></i>
                     </div>
-                    <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                    <input type="text" class="form-control bg-transparent border-0" placeholder="검색할 내용을 입력하세요.">
                 </div>
             </form>
         </div>
@@ -57,7 +57,7 @@
                         <span class="availability-status online"></span>
                     </div>
                     <div class="nav-profile-text">
-                        <p class="mb-1 text-black">내 이름</p>
+                        <p class="mb-1 text-black">내 이름님</p>
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -198,7 +198,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admin">
+                <a class="nav-link" href="${pageContext.request.contextPath}/admin">
                     <span class="menu-title">대시보드</span>
                     <i class="mdi mdi-home menu-icon"></i>
                 </a>
@@ -217,70 +217,83 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="insert_tab">
                     <span class="menu-title">관리자 등록</span>
                     <i class="menu-arrow"></i>
                     <i class="mdi mdi-contacts menu-icon"></i>
                 </a>
                 <div class="collapse" id="insert_tab">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">학과 등록</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">교수 등록</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">관리자 아이피 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepartment">학과 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProfessor">교수 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeIP">관리자 아이피 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="main.jsp">교직원 등록</a></li>
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="main.jsp">
-                    <span class="menu-title">바보</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#classAndTest" aria-expanded="false" aria-controls="classAndTest">
+                    <span class="menu-title">수강/시험</span>
                     <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                 </a>
+                <div class="collapse" id="classAndTest">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepart">수강 신청 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProf">시험 관리</a></li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="main.jsp">
-                    <span class="menu-title">Charts</span>
-                    <i class="mdi mdi-chart-bar menu-icon"></i>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#general-pages_" aria-expanded="false" aria-controls="general-pages_">
+                        <span class="menu-title">등록/장학</span>
+                        <i class="menu-arrow"></i>
+                        <i class="mdi mdi-medical-bag menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="general-pages_">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/infoAmount"> 등록금, 장학금 안내 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listChar"> 등록금 청구 목록 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeSchol"> 장학금 등록 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listSchol"> 장학금 감면 목록 </a></li>
+                        </ul>
+                    </div>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="main.jsp">
-                    <span class="menu-title">Tables</span>
+                    <span class="menu-title">Q&A</span>
                     <i class="mdi mdi-table-large menu-icon"></i>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-                    <span class="menu-title">Sample Pages</span>
+                    <span class="menu-title">공지사항 등록</span>
                     <i class="menu-arrow"></i>
                     <i class="mdi mdi-medical-bag menu-icon"></i>
                 </a>
                 <div class="collapse" id="general-pages">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp"> Blank Page </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp"> Login </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp"> Register </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp"> 404 </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp"> 500 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listNotice"> 공지사항 리스트 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeNotice"> 공지사항 등록 </a></li>
                     </ul>
                 </div>
             </li>
-            <li class="nav-item sidebar-actions">
-              <span class="nav-link">
-                <div class="border-bottom">
-                  <h6 class="font-weight-normal mb-3">Projects</h6>
-                </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
-                <div class="mt-4">
-                  <div class="border-bottom">
-                    <p class="text-secondary">Categories</p>
-                  </div>
-                  <ul class="gradient-bullet-list mt-4">
-                    <li>Free</li>
-                    <li>Pro</li>
-                  </ul>
-                </div>
-              </span>
-            </li>
+               <%-- <li class="nav-item sidebar-actions">
+                  <span class="nav-link">
+                    <div class="border-bottom">
+                      <h6 class="font-weight-normal mb-3">Projects</h6>
+                    </div>
+                    <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
+                    <div class="mt-4">
+                      <div class="border-bottom">
+                        <p class="text-secondary">Categories</p>
+                      </div>
+                      <ul class="gradient-bullet-list mt-4">
+                        <li>Free</li>
+                        <li>Pro</li>
+                      </ul>
+                    </div>
+                  </span>
+                </li>--%>
         </ul>
     </nav>

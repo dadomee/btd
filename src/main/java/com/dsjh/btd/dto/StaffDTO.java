@@ -21,5 +21,5 @@ public class StaffDTO {
     private int depart_id;              // 담당 학과 일련번호
     private LocalDateTime staff_date;   // 교직원 입사일
     private String staff_status;        // 교직원 근무 상태 : 재직, 휴직, 퇴사
-
+    private String staff_img;           // 교직원 사진
 }
