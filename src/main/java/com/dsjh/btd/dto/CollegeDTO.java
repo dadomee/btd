@@ -9,8 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminIpDTO {
-    private int ip_id;
-    private String user_id;
-    private String ip_address;
+public class CollegeDTO {
+    private int college_id;
+    private String college_name;
 }
