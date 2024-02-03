@@ -5,6 +5,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -107,3 +108,12 @@
         </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin : 0 auto">
+                <img src="../bootstrap/mainPage/img/hero-img.png" class="img-fluid" alt="학교사진">
+            </div>
+        </div>
+    </div>
+</section><!-- End Hero -->

@@ -11,15 +11,15 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class ProfessorDTO {
-    private int prof_id;
-    private String prof_name;
-    private String prof_img;
-    private String prof_email;
-    private String prof_tel;
-    private String prof_education;
-    private String prof_career;
-    private int local_id;
-    private int depart_id;
-    private int subject_id;
-    private String depart_name;  // 담당 학과
+    private int prof_id;            // 교수 일련번호(pk)
+    private String prof_name;       // 교수 이름
+    private String prof_img;        // 교수 사진
+    private String prof_email;      // 교수 이메일
+    private String prof_tel;        // 교수 전화번호
+    private String prof_education;  // 교수 학력
+    private String prof_career;     // 교수 경력
+    private int local_id;           // 소속 지역학교 주소
+    private int depart_id;          // 담당 전공
+    private int subject_id;         // 담당 과목
+    private String depart_name;     // 담당 학과
 }

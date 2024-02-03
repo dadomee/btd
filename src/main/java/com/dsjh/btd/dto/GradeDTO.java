@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class GradeDTO {
-    private int grade_id;
-    private String grade_name;
-    private int grade_score;
+    private int grade_id;       // 성적 일련번호(pk)
+    private String grade_name;  // A+, A, B+, B, C+, C, D+, D, F
+    private int grade_score;    // 점수
 }
