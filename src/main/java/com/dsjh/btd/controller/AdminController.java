@@ -1,5 +1,6 @@
 package com.dsjh.btd.controller;
-
+import com.dsjh.btd.dto.DepartmentDTO;
+import com.dsjh.btd.dto.ProfessorDTO;
 import com.dsjh.btd.dto.StaffDTO;
 import com.dsjh.btd.service.AdminService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 @Controller
@@ -66,11 +66,28 @@ public class AdminController {
     @GetMapping("admin/listProfessor")
     public ModelAndView listProf(){
         ModelAndView mav = new ModelAndView();
+        List<ProfessorDTO> plist = adminService.profList();
+        mav.addObject("professor",plist);
+        mav.setViewName("admin/listProfessor");
         return mav;
     }
+
+    @GetMapping("admin/detailProfessor")
+    public ModelAndView detailProf(HttpServletRequest req){
+        ModelAndView mav = new ModelAndView();
+        int prof_id = Integer.parseInt(req.getParameter("id"));
+        List<ProfessorDTO> plist = adminService.detailProf(prof_id);
+        mav.addObject("professor",plist);
+        mav.setViewName("admin/detailProfessor");
+        return mav;
+    }
+
     @GetMapping("admin/listDepartment")
     public ModelAndView listDepart(){
         ModelAndView mav = new ModelAndView();
+        List<DepartmentDTO> dlist = adminService.departList();
+        mav.addObject("department",dlist);
+        mav.setViewName("admin/listDepartment");
         return mav;
     }
     @GetMapping("admin/listStaff")
