@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="../mainTop.jsp" flush="false"/>
 <html>
 <head>
+    <jsp:include page="../mainTop.jsp" flush="false"/>
     <title>학과소개</title>
     <!-- Favicons -->
     <link href="../bootstrap/img/favicon.png" rel="icon">
@@ -40,7 +40,6 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <br><br><br>
     <section id="breadcrumbs" class="breadcrumbs">
         <div class="container">
 

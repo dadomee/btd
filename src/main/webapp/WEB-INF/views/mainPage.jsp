@@ -6,16 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="mainTop.jsp" flush="false"/>
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin : 0 auto">
-                <img src="../bootstrap/mainPage/img/hero-img.png" class="img-fluid" alt="학교사진">
-            </div>
-        </div>
-    </div>
+<%--<section id="hero" class="d-flex align-items-center">--%>
+<%--    <div class="container">--%>
+<%--        <div class="row">--%>
+<%--            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin : 0 auto">--%>
+<%--                <img src="../bootstrap/mainPage/img/hero-img.png" class="img-fluid" alt="학교사진">--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 <%--    <div class="container">--%>
 <%--        <div class="row">--%>
 <%--            <div class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">--%>
@@ -36,7 +37,7 @@
 <%--        </div>--%>
 <%--    </div>--%>
 
-</section><!-- End Hero -->
+<%--</section><!-- End Hero -->--%>
 
 <main id="main">
 
@@ -79,7 +80,7 @@
                 <div class="col-lg-4">
                     <div class="box">
                         <span>01</span>
-                        <h4>교과과정</h4>
+                        <a href="${pageContext.request.contextPath}/main/subjectDetail"><h4>교과과정</h4></a>
 <%--                        <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>--%>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                 <div class="col-lg-4 mt-4 mt-lg-0">
                     <div class="box">
                         <span>02</span>
-                        <h4>전공교과소개</h4>
+                        <a href="${pageContext.request.contextPath}/main/subjectInfo"><h4>전공교과소개</h4></a>
 <%--                        <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>--%>
                     </div>
                 </div>

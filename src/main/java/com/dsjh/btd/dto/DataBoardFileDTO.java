@@ -11,10 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 
 public class DataBoardFileDTO {
-    private int db_file_id;
-    private int dBoard_id;
-    private String db_file_name;
-    private String db_file_saveName;
-    private String db_file_type;
-    private int db_file_size;
+    private int db_file_id;             // 자료실 게시판 파일 일련번호(pk)
+    private int dBoard_id;              // 자료실 게시판 일련번호
+    private String db_file_name;        // 파일 이름
+    private String db_file_saveName;    // 저장 파일 이름
+    private String db_file_type;        // 파일 유형 - excel, pdf, img
+    private int db_file_size;           // 파일 크기
 }

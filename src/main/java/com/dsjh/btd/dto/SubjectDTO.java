@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.w3c.dom.Text;
 
 import java.util.Date;
 
@@ -23,4 +24,5 @@ public class SubjectDTO {
     private int sub_grade;
     private String sub_status;
     private Date sub_regdate;
+    private String sub_info;
 }

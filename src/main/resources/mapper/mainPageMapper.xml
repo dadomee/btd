@@ -3,4 +3,55 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dsjh.btd.dao.MainPageDAO">
+    <!-- 과목 목록 -->
+    <select id="subjectList" resultType="SubjectDTO">
+        SELECT
+            sub_id,
+            sub_name
+        FROM Subject_tb;
+    </select>
+
+    <!-- 과목 상세설명 -->
+    <select id="subjectContent" parameterType="int" resultType="SubjectDTO">
+        SELECT
+            sub_name,
+            sub_type,
+            sub_semester,
+            sub_year,
+            sub_info
+        FROM Subject_tb
+        where sub_id = #{sub_id};
+    </select>
+
+    <!-- 과목 교과정보 -->
+    <select id="subjectDetail" resultType="SubjectDetailDTO">
+        select
+            sub_tb.sub_year,
+            sub_tb.sub_semester,
+            sub_tb.sub_name,
+            sub_tb.sub_type,
+            subDe_tb.sub_detail_type,
+            subDe_tb.sub_detail_exam,
+            subDe_tb.sub_detail_project,
+            subDe_tb.sub_detail_substitute
+        from subject_detail_tb as subDe_tb
+        join subject_tb as sub_tb
+            on subDe_tb.sub_id = sub_tb.sub_id
+    </select>
+
+    <select id="findSubject" parameterType="String" resultType="SubjectDetailDTO">
+        select
+            sub_tb.sub_year,
+            sub_tb.sub_semester,
+            sub_tb.sub_name,
+            sub_tb.sub_type,
+            subDe_tb.sub_detail_type,
+            subDe_tb.sub_detail_exam,
+            subDe_tb.sub_detail_project,
+            subDe_tb.sub_detail_substitute
+        from subject_detail_tb as subDe_tb
+            join subject_tb as sub_tb
+                on subDe_tb.sub_id = sub_tb.sub_id
+        where sub_tb.sub_name like concat('%', #{searchString}, '%')
+    </select>
 </mapper>
