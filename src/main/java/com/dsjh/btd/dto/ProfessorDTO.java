@@ -21,4 +21,5 @@ public class ProfessorDTO {
     private int local_id;           // 소속 지역학교 주소
     private int depart_id;          // 담당 전공
     private int subject_id;         // 담당 과목
+    private String depart_name;     // 담당 학과
 }

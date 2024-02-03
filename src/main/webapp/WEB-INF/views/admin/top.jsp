@@ -26,14 +26,15 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.ico" />
+    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.png" />
 </head>
 <body>
 <!-- partial:partials/_navbar.html -->
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo-mini.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo-header.png" style="width:200px; height:40px;"
+                                                                                                alt="logo" /></a>
+       <%-- <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo-header.png" alt="logo" /></a>--%>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -217,17 +218,34 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="insert_tab">
-                    <span class="menu-title">관리자 등록</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-title">등록</span>
                     <i class="menu-arrow"></i>
                     <i class="mdi mdi-contacts menu-icon"></i>
                 </a>
                 <div class="collapse" id="insert_tab">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepartment">학과 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeSubject">과목 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProfessor">교수 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeIP">관리자 아이피 등록</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">교직원 등록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeStaff">교직원 등록</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#list_tab" aria-expanded="false" aria-controls="ui-basic">
+                    <span class="menu-title">목록</span>
+                    <i class="menu-arrow"></i>
+                    <i class="mdi mdi-contacts menu-icon"></i>
+                </a>
+                <div class="collapse" id="list_tab">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listDepartment">학과 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listSubject">과목 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listProfessor">교수 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listIP">관리자 아이피 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listStaff">교직원 목록</a></li>
                     </ul>
                 </div>
             </li>
@@ -238,14 +256,14 @@
                 </a>
                 <div class="collapse" id="classAndTest">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepart">수강 신청 관리</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProf">시험 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageRegister">수강 신청 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageTest">시험 관리</a></li>
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#general-pages_" aria-expanded="false" aria-controls="general-pages_">
-                        <span class="menu-title">등록/장학</span>
+                        <span class="menu-title">학사 등록/장학</span>
                         <i class="menu-arrow"></i>
                         <i class="mdi mdi-medical-bag menu-icon"></i>
                     </a>

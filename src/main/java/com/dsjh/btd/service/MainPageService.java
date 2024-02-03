@@ -1,5 +1,4 @@
 package com.dsjh.btd.service;
-
 import com.dsjh.btd.dao.MainPageDAO;
 import com.dsjh.btd.dto.SubjectDTO;
 import com.dsjh.btd.dto.SubjectDetailDTO;
@@ -12,7 +11,6 @@ import java.util.List;
 
 @Service
 public class MainPageService implements MainPageDAO {
-
     private final SqlSessionTemplate sqlSession;
 
     public MainPageService(SqlSessionTemplate sqlSession) {
