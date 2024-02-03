@@ -6,4 +6,18 @@
     <select id="myPageList" resultType="StaffDTO">
         SELECT * FROM staff_tb;
     </select>
+    <select id="profList" resultType="ProfessorDTO">
+        SELECT prof.*, depart.depart_name
+        FROM btd.department_tb depart
+                 INNER JOIN btd.professor_tb prof ON depart.depart_id = prof.depart_id;
+    </select>
+    <select id="detailProf" resultType="ProfessorDTO">
+        SELECT prof.*, depart.depart_name
+        FROM btd.department_tb depart
+                 INNER JOIN btd.professor_tb prof ON depart.depart_id = prof.depart_id
+                    WHERE prof.prof_id =#{prof_id};
+    </select>
+    <select id="departList" resultType="DepartmentDTO">
+        SELECT * FROM department_tb;
+    </select>
 </mapper>

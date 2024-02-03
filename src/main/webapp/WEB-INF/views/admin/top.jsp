@@ -26,14 +26,15 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.ico" />
+    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.png" />
 </head>
 <body>
 <!-- partial:partials/_navbar.html -->
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo-mini.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo-header.png" style="width:200px; height:40px;"
+                                                                                                alt="logo" /></a>
+       <%-- <a class="navbar-brand brand-logo-mini" href="${pageContext.request.contextPath}/admin"><img src="../bootstrap/admin/images/logo-header.png" alt="logo" /></a>--%>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
