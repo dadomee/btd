@@ -9,11 +9,18 @@ import java.util.List;
 @Repository
 public interface MainPageDAO {
 
+    // 전공교과소개 목록
     public List<SubjectDTO> subjectList();
 
+    // 전공교과소개 내용
     public SubjectDTO subjectContent(int sub_id);
 
+    // 전공교과소개 - 키워드로 검색
+    public List<SubjectDTO> findSubject(String searchString);
+
+    // 교과과정
     public List<SubjectDetailDTO> subjectDetail();
 
-    public List<SubjectDetailDTO> findSubject(String searchString);
+    // 교과과정 - 키워드로 검색
+    public List<SubjectDetailDTO> findSubDetail(String searchString);
 }

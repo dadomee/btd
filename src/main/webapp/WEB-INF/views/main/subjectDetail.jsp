@@ -11,18 +11,17 @@
 <head>
     <jsp:include page="../mainTop.jsp" flush="false"/>
     <link rel="stylesheet" href="../bootstrap/admin/vendors/css/vendor.bundle.base.css">
-
     <title>교과과정</title>
 </head>
 <body>
 <div class="search-field d-none d-md-block" style="position:relative; left:600px;">
-    <form class="d-flex align-items-center h-50" role="search" action="${pageContext.request.contextPath}/findSubject" method="post">
+    <form class="d-flex align-items-center h-50" role="search" action="${pageContext.request.contextPath}/findSubDetail" method="post">
         <div class="input-group" style="width:500px;">
             <div class="input-group-prepend bg-transparent">
                 <i class="input-group-text border-0 mdi mdi-magnify"></i>
             </div>
             <input type="text" name="searchString" class="form-control bg-transparent border-0" placeholder="검색할 내용을 입력하세요.">
-            <button class="btn btn-primary" type="submit" value="search">
+            <input class="btn btn-primary" type="submit" value="search">
         </div>
     </form>
 </div>
@@ -50,7 +49,6 @@
         <td>${subDetail.sub_detail_substitute}</td>
     </tr>
 </c:forEach>
-
     </tbody>
 </table>
 </body>

@@ -16,21 +16,30 @@ public class MainPageService implements MainPageDAO {
     public MainPageService(SqlSessionTemplate sqlSession) {
         this.sqlSession = sqlSession;
     }
-    
+
+    // 전공교과소개 목록
     public List<SubjectDTO> subjectList() {
         return sqlSession.selectList("subjectList");
     }
 
+    // 전공교과소개 내용
     public SubjectDTO subjectContent(int sub_id) {
         return sqlSession.selectOne("subjectContent", sub_id);
     }
 
+    // 전공교과소개 - 키워드로 검색
+    public List<SubjectDTO> findSubject(String searchString) {
+        return sqlSession.selectList("findSubject", searchString);
+    }
+
+    // 교과과정
     public List<SubjectDetailDTO> subjectDetail() {
         return sqlSession.selectList("subjectDetail");
     }
-
-    public List<SubjectDetailDTO> findSubject(String searchString) {
-        return sqlSession.selectList("findSubject", searchString);
+    
+    // 교과과정 - 키워드로 검색
+    public List<SubjectDetailDTO> findSubDetail(String searchString) {
+        return sqlSession.selectList("findSubDetail", searchString);
     }
 
 }
