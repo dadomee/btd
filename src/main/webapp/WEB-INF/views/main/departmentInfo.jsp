@@ -44,7 +44,6 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>학과소개</h2>
             </div>
 
         </div>
@@ -63,7 +62,6 @@
                             <div class="swiper-slide">
                                 <img src="../bootstrap/mainPage/img/main/depart_main1.jpg" alt="로고사진1">
                             </div>
-
 <%--                            <div class="swiper-slide">--%>
 <%--                                <img src="../img/portfolio/portfolio-2.jpg" alt="">--%>
 <%--                            </div>--%>
