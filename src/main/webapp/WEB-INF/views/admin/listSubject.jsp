@@ -41,9 +41,9 @@
                             <td>${sub.depart_name}</td>
                             <td>${sub.prof_name}</td>
                             <td>${sub.sub_type}</td>
-                            <td>${sub.sub_year}</td>
-                            <td>${sub.sub_semester}</td>
-                            <td>${sub.sub_grade}</td>
+                            <td>${sub.sub_year}학년</td>
+                            <td>${sub.sub_semester}학기</td>
+                            <td>${sub.sub_grade}학점</td>
                         </tr>
                     </c:forEach>
                     </tbody>

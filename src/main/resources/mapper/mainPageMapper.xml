@@ -8,7 +8,7 @@
         SELECT
             sub_id,
             sub_name
-        FROM Subject_tb;
+        FROM subject_tb;
     </select>
 
     <!-- 과목 상세설명 -->
@@ -19,7 +19,7 @@
             sub_semester,
             sub_year,
             sub_info
-        FROM Subject_tb
+        FROM subject_tb
         where sub_id = #{sub_id};
     </select>
 

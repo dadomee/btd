@@ -20,4 +20,11 @@
     <select id="departList" resultType="DepartmentDTO">
         SELECT * FROM department_tb;
     </select>
+    <select id="subList" resultType="SubjectDTO">
+        SELECT * FROM subject_tb;
+    </select>
+    <select id="getProfName" resultType="ProfessorDTO">
+        SELECT prof_name from professor_tb where depart_id
+        IN (select depart_id from department_tb where depart_name= #{depart_name})
+    </select>
 </mapper>
