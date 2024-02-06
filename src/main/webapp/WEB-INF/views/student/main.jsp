@@ -7,7 +7,6 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="top.jsp"%>
-<title>학사 관리 시스템</title>
             <!-- Content wrapper -->
             <div class="content-wrapper">
                 <!-- Content -->
