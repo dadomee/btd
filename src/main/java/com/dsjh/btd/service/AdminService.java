@@ -17,15 +17,32 @@ public class AdminService implements AdminDAO {
     public List<StaffDTO> myPageList() {
         return sqlSession.selectList("myPageList");
     }
-    public List<ProfessorDTO> profList(){ return sqlSession.selectList("profList");  }
-    public List<DepartmentDTO> departList(){ return sqlSession.selectList("departList");  }
-    public List<ProfessorDTO> detailProf(int prof_id){ return sqlSession.selectList("detailProf",prof_id);  }
 
-    public List<CollegeDTO> getCollegeName(){return sqlSession.selectList("getCollegeName"); }
+    public List<CollegeDTO> getCollegeName(){return sqlSession.selectList("getCollegeName"); 
+    }
+ 
     public int insertDepartment(DepartmentDTO dto){
         System.out.println(dto);
         int res = sqlSession.insert("insertDepartment",dto);
         return res;
     }
-    public List<SubjectDTO> subList(){return sqlSession.selectList("subList");}
+    public List<ProfessorDTO> profList() {
+        return sqlSession.selectList("profList");
+    }
+
+    public List<DepartmentDTO> departList() {
+        return sqlSession.selectList("departList");
+    }
+
+    public List<ProfessorDTO> detailProf(int prof_id) {
+        return sqlSession.selectList("detailProf", prof_id);
+    }
+
+    public List<SubjectDTO> subList() {
+        return sqlSession.selectList("subList");
+    }
+
+    public List<ProfessorDTO> getProfName(String depart_name){
+        return  sqlSession.selectList("getProfName");
+    }
 }

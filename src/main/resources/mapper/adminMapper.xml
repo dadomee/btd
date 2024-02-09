@@ -33,4 +33,8 @@
     <insert id="insertDepartment" parameterType="DepartmentDTO">
         insert into department_tb(depart_name, college_name, depart_tel) values (#{depart_name},#{college_name},#{depart_tel});
     </insert>
+    <select id="getProfName" resultType="ProfessorDTO">
+        SELECT prof_name from professor_tb where depart_id
+        IN (select depart_id from department_tb where depart_name= #{depart_name})
+    </select>
 </mapper>

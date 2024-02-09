@@ -10,6 +10,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en,kr">
+<script>
+    function get_prof(depart_name,prof_name) {
+        $.ajax({
+            type: 'GET',
+            url: '/'
+            contentType: "application/json; charset=UTF-8",
+            dataType: 'json',
+            success: function (result) {
+                console.log(result)
+                for (i = 0; i < result.length; i++) {
+                    prof_name.plist[i] = new prof_name(result[i], i);
+                }
+                }
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        })
+    }
+</script>
 <head>
     <title>과목 등록</title>
 </head>
@@ -29,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="depart_name">학과</label>
-                                    <select class="form-control form-control-sm" id="depart_name">
+                                    <select class="form-control form-control-sm" id="depart_name" name="depart_name" onchange="get_prof(depart_name)">
                                         <option value="">학과를 선택하세요</option>
                                         <c:forEach var="depart" items="${depart}">
                                             <option value="${depart.depart_name}">${depart.depart_name}</option>
@@ -38,10 +56,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="prof_name">담당 교수</label>
-                                    <select class="form-control form-control-sm" id="prof_name">
+                                    <select class="form-control form-control-sm" id="prof_name" name="prof_name">
                                         <option value="">담당 교수를 선택하세요</option>
                                         <c:forEach var="prof" items="${prof}">
-                                            <option value="${prof.prof_name}">${prof.prof_name}</option>
+                                            <option value="${depart.prof_name}">${depart.prof_name}</option>
                                         </c:forEach>
                                     </select>
                                 </div>

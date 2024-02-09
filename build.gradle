@@ -39,7 +39,7 @@ dependencies {
 	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
 	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
 	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
-
+	implementation 'org.json:json:20230618'
 }
 
 tasks.named('test') {

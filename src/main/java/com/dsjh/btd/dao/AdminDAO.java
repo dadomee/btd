@@ -11,10 +11,8 @@ public interface AdminDAO {
     public List<ProfessorDTO> profList();
     public List<ProfessorDTO> detailProf(int prof_id);
     public List<DepartmentDTO> departList();
-
     public List<CollegeDTO> getCollegeName();
-
     public int insertDepartment(DepartmentDTO dto);
     public List<SubjectDTO> subList();
-
+    public List<ProfessorDTO> getProfName(String depart_name);
 }
