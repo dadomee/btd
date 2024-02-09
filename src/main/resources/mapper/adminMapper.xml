@@ -20,4 +20,17 @@
     <select id="departList" resultType="DepartmentDTO">
         SELECT * FROM department_tb;
     </select>
+    <select id="getCollegeName" resultType="CollegeDTO">
+        SELECT college_name FROM college_tb;
+    </select>
+    <select id="subList" resultType="SubjectDTO">
+        SELECT sub.*,dep.depart_name,prof.prof_name
+        from subject_tb sub
+            inner join department_tb dep on sub.depart_id = dep.depart_id
+            inner join professor_tb prof on sub.prof_id = prof.prof_id
+        order by sub.sub_year asc, sub.sub_semester asc;
+    </select>
+    <insert id="insertDepartment" parameterType="DepartmentDTO">
+        insert into department_tb(depart_name, college_name, depart_tel) values (#{depart_name},#{college_name},#{depart_tel});
+    </insert>
 </mapper>
