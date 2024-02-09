@@ -85,7 +85,7 @@
                                     <label for="sub_info">과목 설명</label>
                                     <textarea class="form-control" id="sub_info" name="sub_info" rows="5"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+                                <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">Submit</button>
                                 <button class="btn btn-light">Cancel</button>
                             </form>
                         </div>

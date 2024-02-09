@@ -1,10 +1,7 @@
 package com.dsjh.btd.service;
 
 import com.dsjh.btd.dao.AdminDAO;
-import com.dsjh.btd.dto.DepartmentDTO;
-import com.dsjh.btd.dto.ProfessorDTO;
-import com.dsjh.btd.dto.StaffDTO;
-import com.dsjh.btd.dto.SubjectDTO;
+import com.dsjh.btd.dto.*;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -21,6 +18,14 @@ public class AdminService implements AdminDAO {
         return sqlSession.selectList("myPageList");
     }
 
+    public List<CollegeDTO> getCollegeName(){return sqlSession.selectList("getCollegeName"); 
+    }
+ 
+    public int insertDepartment(DepartmentDTO dto){
+        System.out.println(dto);
+        int res = sqlSession.insert("insertDepartment",dto);
+        return res;
+    }
     public List<ProfessorDTO> profList() {
         return sqlSession.selectList("profList");
     }
