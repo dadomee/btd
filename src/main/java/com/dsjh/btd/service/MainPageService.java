@@ -1,5 +1,7 @@
 package com.dsjh.btd.service;
 import com.dsjh.btd.dao.MainPageDAO;
+import com.dsjh.btd.dto.DepartmentDTO;
+import com.dsjh.btd.dto.ProfessorDTO;
 import com.dsjh.btd.dto.SubjectDTO;
 import com.dsjh.btd.dto.SubjectDetailDTO;
 import org.eclipse.jdt.internal.compiler.batch.Main;
@@ -42,4 +44,9 @@ public class MainPageService implements MainPageDAO {
         return sqlSession.selectList("findSubDetail", searchString);
     }
 
+    // 교수진 소개
+    @Override
+    public List<ProfessorDTO> professorList() {
+        return sqlSession.selectList("professorList");
+    }
 }

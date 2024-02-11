@@ -1,5 +1,7 @@
 package com.dsjh.btd.dao;
 
+import com.dsjh.btd.dto.DepartmentDTO;
+import com.dsjh.btd.dto.ProfessorDTO;
 import com.dsjh.btd.dto.SubjectDTO;
 import com.dsjh.btd.dto.SubjectDetailDTO;
 import org.springframework.stereotype.Repository;
@@ -23,4 +25,8 @@ public interface MainPageDAO {
 
     // 교과과정 - 키워드로 검색
     public List<SubjectDetailDTO> findSubDetail(String searchString);
+
+    // 교수진 소개
+    public List<ProfessorDTO> professorList();
+
 }
