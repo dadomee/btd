@@ -1,5 +1,6 @@
 package com.dsjh.btd.controller;
 
+import com.dsjh.btd.dto.ProfessorDTO;
 import com.dsjh.btd.dto.SubjectDTO;
 import com.dsjh.btd.dto.SubjectDetailDTO;
 import com.dsjh.btd.service.MainPageService;
@@ -22,7 +23,7 @@ public class MainPageController {
     @GetMapping("/")
     public ModelAndView mainPage() {
         ModelAndView mav = new ModelAndView();
-         mav.setViewName("mainPage");
+        mav.setViewName("mainPage");
         return mav;
     }
     
@@ -38,7 +39,6 @@ public class MainPageController {
     @GetMapping("/main/subjectInfo")
     public ModelAndView subjectInfo() {
         List<SubjectDTO> subList = mainPageService.subjectList();
-
         ModelAndView mav = new ModelAndView();
         mav.addObject("subList", subList);
         mav.setViewName("main/subjectInfo");
@@ -50,7 +50,6 @@ public class MainPageController {
     public ModelAndView subjectInfoDetail(int sub_id) {
         List<SubjectDTO> subList = mainPageService.subjectList();
         SubjectDTO dto = mainPageService.subjectContent(sub_id);
-
         ModelAndView mav = new ModelAndView();
         mav.addObject("subInfo", dto);
         mav.addObject("subList", subList);
@@ -72,7 +71,6 @@ public class MainPageController {
     @GetMapping("/main/subjectDetail")
     public ModelAndView subjectDetail() {
         List<SubjectDetailDTO> subjectDetail = mainPageService.subjectDetail();
-
         ModelAndView mav = new ModelAndView();
         mav.addObject("subDetail", subjectDetail);
         mav.setViewName("main/subjectDetail");
@@ -91,9 +89,19 @@ public class MainPageController {
 
     // 학과 일정
     @GetMapping("/main/departmentSchedule")
-    public ModelAndView departmentschedule() {
+    public ModelAndView departmentSchedule() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("main/departmentSchedule");
+        return mav;
+    }
+
+    // 교수진 소개
+    @GetMapping("/main/professorInfo")
+    public ModelAndView professorInfo() {
+        List<ProfessorDTO> profList = mainPageService.professorList();
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("profList", profList);
+        mav.setViewName("main/professorInfo");
         return mav;
     }
 }

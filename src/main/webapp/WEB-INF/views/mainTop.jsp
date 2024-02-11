@@ -81,7 +81,7 @@
                         <li><a href="${pageContext.request.contextPath}/main/departmentSchedule">학과일정</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto " href="#">교수진소개</a></li>
+                <li><a class="nav-link scrollto " href="${pageContext.request.contextPath}/main/professorInfo">교수진소개</a></li>
                 <li><a class="nav-link scrollto" href="#">공지사항</a></li>
                 <li><a class="nav-link scrollto" href="#">지역대학</a></li>
 <%--                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>--%>

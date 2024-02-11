@@ -33,7 +33,7 @@
             sub_year,
             sub_info
         from subject_tb
-        where sub_name like concat('%', #{searchString}, '%')
+        where sub_name like concat('%', #{searchString}, '%');
     </select>
 
     <!-- 교과과정 -->
@@ -49,7 +49,7 @@
             subDe_tb.sub_detail_substitute
         from subject_detail_tb as subDe_tb
         join subject_tb as sub_tb
-            on subDe_tb.sub_id = sub_tb.sub_id
+            on subDe_tb.sub_id = sub_tb.sub_id;
     </select>
 
     <!-- 교과과정 - 키워드로 검색 -->
@@ -66,6 +66,24 @@
         from subject_detail_tb as subDe_tb
             join subject_tb as sub_tb
                 on subDe_tb.sub_id = sub_tb.sub_id
-        where sub_tb.sub_name like concat('%', #{searchString}, '%')
+        where sub_tb.sub_name like concat('%', #{searchString}, '%');
+    </select>
+
+    <!-- 교수진 소개 -->
+    <select id="professorList" resultType="ProfessorDTO">
+        select
+            prof_tb.prof_id,
+            prof_name,
+            prof_img,
+            prof_email,
+            prof_tel,
+            depart_name,
+            group_concat(sub_name SEPARATOR ', ') as sub_name
+        from professor_tb prof_tb
+                 join department_tb depart_tb
+                      on depart_tb.depart_id = prof_tb.depart_id
+                 join subject_tb sub_id
+                      on sub_id.prof_id = prof_tb.prof_id
+        group by prof_id
     </select>
 </mapper>
