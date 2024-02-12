@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dsjh.btd.dao.ProfessorDAO">
+    <select id="professorInfo" parameterType="int" resultType="ProfessorDTO">
+        select
+            prof_tb.prof_id,
+            prof_name,
+            prof_img,
+            prof_email,
+            prof_tel,
+            prof_education,
+            prof_career,
+            depart_name,
+            group_concat(sub_name SEPARATOR ', ') as sub_name
+        from professor_tb prof_tb
+                 join department_tb depart_tb
+                      on depart_tb.depart_id = prof_tb.depart_id
+                 join subject_tb sub_id
+                      on sub_id.prof_id = prof_tb.prof_id
+        where prof_tb.prof_id = #{prof_id}
+        group by prof_id
+    </select>
+</mapper>
