@@ -26,7 +26,7 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.png" />
+    <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.ico" />
 </head>
 <body>
 <!-- partial:partials/_navbar.html -->
@@ -218,14 +218,16 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#insert_tab" aria-expanded="false" aria-controls="insert_tab">
                     <span class="menu-title">등록</span>
                     <i class="menu-arrow"></i>
                     <i class="mdi mdi-contacts menu-icon"></i>
                 </a>
                 <div class="collapse" id="insert_tab">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeDepartment">학과 등록</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="location.href='../admin/writeDepartment'">학과 등록</a>
+                        </li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeSubject">과목 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeProfessor">교수 등록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/writeIP">관리자 아이피 등록</a></li>
@@ -234,13 +236,14 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#list_tab" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#list_tab" aria-expanded="false" aria-controls="list_tab">
                     <span class="menu-title">목록</span>
                     <i class="menu-arrow"></i>
                     <i class="mdi mdi-contacts menu-icon"></i>
                 </a>
                 <div class="collapse" id="list_tab">
                     <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href=${pageContext.request.contextPath}/admin/listStudent"">학생 목록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listDepartment">학과 목록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listSubject">과목 목록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listProfessor">교수 목록</a></li>
@@ -275,10 +278,9 @@
                             <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listSchol"> 장학금 감면 목록 </a></li>
                         </ul>
                     </div>
-                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="main.jsp">
+                <a class="nav-link" href="${pageContext.request.contextPath}/admin/listQnA">
                     <span class="menu-title">Q&A</span>
                     <i class="mdi mdi-table-large menu-icon"></i>
                 </a>
@@ -296,22 +298,22 @@
                     </ul>
                 </div>
             </li>
-               <%-- <li class="nav-item sidebar-actions">
-                  <span class="nav-link">
-                    <div class="border-bottom">
-                      <h6 class="font-weight-normal mb-3">Projects</h6>
-                    </div>
-                    <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>
-                    <div class="mt-4">
-                      <div class="border-bottom">
-                        <p class="text-secondary">Categories</p>
-                      </div>
-                      <ul class="gradient-bullet-list mt-4">
-                        <li>Free</li>
-                        <li>Pro</li>
-                      </ul>
-                    </div>
-                  </span>
-                </li>--%>
         </ul>
     </nav>
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../bootstrap/admin/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="../bootstrap/admin/vendors/chart.js/chart.min.js"></script>
+    <script src="../bootstrap/admin/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- end plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../bootstrap/admin/js/off-canvas.js"></script>
+    <script src="../bootstrap/admin/js/hoverable-collapse.js"></script>
+    <script src="../bootstrap/admin/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- custom js for this page -->
+    <script src="../bootstrap/admin/js/dashboard.js"></script>
+    <script src="../bootstrap/admin/js/todolist.js"></script>

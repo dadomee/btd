@@ -5,11 +5,31 @@
   Time: 6:22 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="top.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <%@include file="top.jsp"%>
+
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>대학교 관리자 페이지</title>
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="../bootstrap/admin/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="../bootstrap/admin/vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <!-- endinject -->
+        <!-- Layout styles -->
+        <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
+        <!-- End layout styles -->
+        <link rel="shortcut icon" href="../bootstrap/admin/images/favicon.ico" />
+</head>
+<body>
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
@@ -266,5 +286,36 @@
                     </div>
                 </div>
                 </div>
-
-<%@ include file="bottom.jsp"%>
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="container-fluid d-flex justify-content-between">
+                    <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">copyright © bootstrapdash.com 2021</span>
+                    <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> free <a
+                            href="https://www.bootstrapdash.com/bootstrap-admin-template/"
+                            target="_blank">bootstrap admin template</a> from bootstrapdash.com</span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="../bootstrap/admin/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="../bootstrap/admin/vendors/chart.js/chart.min.js"></script>
+<script src="../bootstrap/admin/js/jquery.cookie.js" type="text/javascript"></script>
+<!-- end plugin js for this page -->
+<!-- inject:js -->
+<script src="../bootstrap/admin/js/off-canvas.js"></script>
+<script src="../bootstrap/admin/js/hoverable-collapse.js"></script>
+<script src="../bootstrap/admin/js/misc.js"></script>
+<!-- endinject -->
+<!-- custom js for this page -->
+<script src="../bootstrap/admin/js/dashboard.js"></script>
+<script src="../bootstrap/admin/js/todolist.js"></script>
+<!-- end custom js for this page -->
+</body>
+</html>

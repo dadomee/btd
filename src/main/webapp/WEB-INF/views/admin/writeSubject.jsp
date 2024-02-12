@@ -11,23 +11,53 @@
 <!DOCTYPE html>
 <html lang="en,kr">
 <script>
-    function get_prof(depart_name,prof_name) {
-        $.ajax({
-            type: 'GET',
-            url: '/'
-            contentType: "application/json; charset=UTF-8",
-            dataType: 'json',
-            success: function (result) {
-                console.log(result)
-                for (i = 0; i < result.length; i++) {
-                    prof_name.plist[i] = new prof_name(result[i], i);
-                }
-                }
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        })
+    function get_prof(depart_name) {
+        if($("select[name=depart_name] > option:selected").val() == "2"){
+            $("#prof_name").show();
+            $("#prof_name > option").remove();
+            $("#prof_name").attr("disabled",true);
+            $("#prof_name").append("<option value=\"\">--선택--</option>");
+
+            var type = $("#depart_name").val();
+
+            var submitObj = new Object();
+            submitObj.depart_name= type;
+
+            $.ajax({
+                url: "getProf",
+                type: "GET",
+                contentType: "application/json;charset=UTF-8",
+                data:{ depart_name: type },
+                dataType : "json",
+                progress: true
+            })
+                .done(function(data) {
+
+                    $('#prof_name').children('option:not(:first)').remove();
+
+                    var laborOption = "";
+                    for(var k in data.prof){
+                        var obj = data.prof[k];
+                        var prof_name= obj.prof_name;
+
+                        laborOption = "<option value='" + prof_name + "'>" + prof_name + "</option>";
+                        $("#prof_name").append(laborOption);
+                    }
+
+                    $("#prof_name").attr("disabled",false);
+
+
+                })
+                .fail(function(e) {
+                    alert("FAIL - "+e);
+                })
+                .always(function() {
+                    $("#prof_name").attr("disabled",false);
+                });
+        }
     }
 </script>
+
 <head>
     <title>과목 등록</title>
 </head>
@@ -47,20 +77,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="depart_name">학과</label>
-                                    <select class="form-control form-control-sm" id="depart_name" name="depart_name" onchange="get_prof(depart_name)">
+                                    <select class="form-control form-control-sm" name="depart_name" onchange="get_prof(depart_name)">
                                         <option value="">학과를 선택하세요</option>
                                         <c:forEach var="depart" items="${depart}">
-                                            <option value="${depart.depart_name}">${depart.depart_name}</option>
+                                            <option value="${depart.depart_name}" id="depart_name" name="depart_name">${depart.depart_name}</option>
                                         </c:forEach>
                                     </select>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="prof_name">담당 교수</label>
                                     <select class="form-control form-control-sm" id="prof_name" name="prof_name">
                                         <option value="">담당 교수를 선택하세요</option>
-                                        <c:forEach var="prof" items="${prof}">
-                                            <option value="${depart.prof_name}">${depart.prof_name}</option>
-                                        </c:forEach>
                                     </select>
                                 </div>
                                 <div class="form-group">

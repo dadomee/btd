@@ -1,17 +1,23 @@
 package com.dsjh.btd.controller;
 import com.dsjh.btd.dto.*;
 import com.dsjh.btd.service.AdminService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.asm.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -86,16 +92,23 @@ public class AdminController {
     }
     @RequestMapping(value = "admin/getProf", produces = "application/json; charset=UTF-8", method= RequestMethod.GET)
     @ResponseBody
-    public void getProfOption(HttpServletResponse res,String depart_name) throws IOException {
-        List<ProfessorDTO> plist = adminService.getProfName(depart_name);
-        JSONArray jsonArray = new JSONArray();
-        for (int i = 0; i < plist.size(); i++) {
-            jsonArray.put(plist.get(i));
+    public void getProfOption(HttpServletResponse res,@RequestBody Map<String, String> requestBody) throws IOException {
+        String depart_name = requestBody.get("depart_name");
+        JSONObject obj = new JSONObject();
+        res.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = res.getWriter();
+        System.out.println("디파트 네임 넘어오니?"+depart_name);
+        try{
+            List<ProfessorDTO> plist = adminService.getProfName(depart_name);
+
+            obj.put("prof", plist);
+
+        }catch(Exception e){
+            System.out.println(e.toString());
+            obj.put("res", "error");
+
         }
-        PrintWriter pw = res.getWriter();
-        pw.print(jsonArray.toString());
-        pw.flush();
-        pw.close();
+        out.print(obj);
     }
     @PostMapping("admin/writeSubject")
     public ModelAndView writeSubPro(HttpServletRequest req){
@@ -108,6 +121,11 @@ public class AdminController {
         List<SubjectDTO> slist = adminService.subList();
         mav.addObject("subject", slist);
         mav.setViewName("/admin/listSubject");
+        return mav;
+    }
+    @GetMapping("admin/listStudent")
+    public ModelAndView listSutdent(){
+        ModelAndView mav = new ModelAndView();
         return mav;
     }
     @GetMapping("admin/listProfessor")
@@ -144,6 +162,51 @@ public class AdminController {
     }
     @GetMapping("admin/listIP")
     public ModelAndView listIP(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/listQnA")
+    public ModelAndView listQnA(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/listNotice")
+    public ModelAndView listNotice(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/writeNotice")
+    public ModelAndView writeNotice(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @PostMapping("admin/writeNotice")
+    public ModelAndView writeNoticePro(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/infoAmount")
+    public ModelAndView infoAmount(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/listChar")
+    public ModelAndView listChar(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/writeSchol")
+    public ModelAndView writeSchol(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @PostMapping("admin/writeSchol")
+    public ModelAndView writeScholPro(){
+        ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/listSchol")
+    public ModelAndView listSChol(){
         ModelAndView mav = new ModelAndView();
         return mav;
     }
