@@ -22,7 +22,9 @@ public class MainPageController {
     // 메인페이지
     @GetMapping("/")
     public ModelAndView mainPage() {
+        List<ProfessorDTO> profList = mainPageService.professorList();
         ModelAndView mav = new ModelAndView();
+        mav.addObject("profList", profList);
         mav.setViewName("mainPage");
         return mav;
     }
@@ -95,13 +97,29 @@ public class MainPageController {
         return mav;
     }
 
-    // 교수진 소개
-    @GetMapping("/main/professorInfo")
+    // 교수진 목록
+    @GetMapping("/main/professorList")
     public ModelAndView professorInfo() {
         List<ProfessorDTO> profList = mainPageService.professorList();
         ModelAndView mav = new ModelAndView();
         mav.addObject("profList", profList);
-        mav.setViewName("main/professorInfo");
+        mav.setViewName("main/professorList");
+        return mav;
+    }
+    
+    // 공지사항
+    @GetMapping("/main/notice")
+    public ModelAndView notice() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("main/notice");
+        return mav;
+    }
+
+    // 지역대학
+    @GetMapping("/main/localUniversity")
+    public ModelAndView localUniversity() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("main/localUniversity");
         return mav;
     }
 }

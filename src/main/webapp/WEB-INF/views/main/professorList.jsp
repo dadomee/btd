@@ -10,9 +10,10 @@
 <html>
 <head>
     <jsp:include page="../mainTop.jsp" flush="false"/>
-    <title>교수진 소개</title>
+    <title>교수진 목록</title>
 </head>
 <body>
+<br><br><br><br><br>
     <main id="main">
 
 <%--        <!-- ======= Breadcrumbs ======= -->--%>
@@ -32,27 +33,18 @@
                     <c:forEach var="profList" items="${profList}">
                 <div class="row gy-2">
                     <div class="col-lg-2">
-                        <div class="portfolio-details-slider swiper" style="height:150px;">
+                        <div class="portfolio-details-slider swiper" style="height:300px;">
                             <div class="swiper-wrapper align-items-center">
-
-                                <div class="swiper-slide" style="width:150px; height:150px;">
+                                <div class="swiper-slide" style="width:150px; height:300px; position:relative; top:30px;">
                                     <img src="../bootstrap/admin/images/faces/${profList.prof_img}" alt="교수사진">
                                 </div>
-                                <%--                            <div class="swiper-slide">--%>
-                                <%--                                <img src="../img/portfolio/portfolio-2.jpg" alt="">--%>
-                                <%--                            </div>--%>
-
-                                <%--                            <div class="swiper-slide">--%>
-                                <%--                                <img src="../img/portfolio/portfolio-3.jpg" alt="">--%>
-                                <%--                            </div>--%>
-
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
-
                     <div class="col-lg-6">
                         <div class="portfolio-description" style="position:relative; bottom:30px;">
+                            <br>
                             <h3>${profList.prof_name} 교수</h3>
                             <h5>이메일 : ${profList.prof_email}</h5>
                             <h5>연락처 : ${profList.prof_tel}</h5>
@@ -60,8 +52,20 @@
                             <h6>담당과목 : ${profList.sub_name}</h6>
                         </div>
                     </div>
+                    <section id="features" class="features" style="width:50px; height:50px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1 mt-1">
+                                    <div class="icon-box" style="width:40px; height:40px;">
+                                        <a href="../professor/profMain?prof_id=${profList.prof_id}">
+                                            <i class="ri-price-tag-2-line" style="color: #4233ff; position:relative; right:15px;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                        <br>
                     </c:forEach>
                 </div>
             </div>
