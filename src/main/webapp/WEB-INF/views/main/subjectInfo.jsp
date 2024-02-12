@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
 <head>
     <jsp:include page="../mainTop.jsp" flush="false"/>
@@ -32,7 +31,7 @@
                 <div class="col-lg-3 col-md-4 mt-4">
                     <div class="icon-box">
                             <i class="ri-database-2-line" style="color: #47aeff;"></i>
-                            <h3><a href="${pageContext.request.contextPath}/main/subjectInfoContent?sub_id=${subList.sub_id}">${subList.sub_name}</a></h3>
+                            <h3><a href="${pageContext.request.contextPath}/main/subjectInfoContent?sub_id=${subList.sub_id}#services">${subList.sub_name}</a></h3>
                     </div>
                 </div>
             </c:forEach>

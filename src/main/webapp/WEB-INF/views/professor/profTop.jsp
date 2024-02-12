@@ -1,20 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
-  Date: 2024-01-21
-  Time: 오후 9:06
+  User: bc102
+  Date: 2024-02-12
+  Time: 오후 5:44
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>방송통신대학교 컴퓨터과학과</title>
+    <title>컴퓨터과학과 교수</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -35,6 +34,8 @@
 
     <!-- Template Main CSS File -->
     <link href="../bootstrap/mainPage/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../bootstrap/admin/css/style.css">
 
 
     <link rel="stylesheet" href="../bootstrap/admin/vendors/mdi/css/materialdesignicons.min.css">
@@ -59,50 +60,26 @@
     </ul>
     <div class="container d-flex align-items-center justify-content-between">
 
-        <h1 class="logo"><a href="/">KNOU computer science</a></h1>
+        <h1 class="logo"><a href="#">KNOU computer science</a></h1>
 
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="${pageContext.request.contextPath}/main/departmentInfo">학과소개</a></li>
-                <li class="dropdown"><a href="#"><span>교과정보</span> <i class="bi bi-chevron-down"></i></a>
+                <li><a class="nav-link scrollto" href="/">메인페이지</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/professorInfo">교수소개</a></li>
+                <li class="dropdown"><a href="#"><span>강의목록</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="${pageContext.request.contextPath}/main/subjectInfo">전공교과소개</a></li>
-                        <li><a href="${pageContext.request.contextPath}/main/subjectDetail">교과과정</a></li>
+                        <li><a href="#">test</a></li>
+                        <li><a href="#">test</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>학습정보</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">학기별구분과목</a></li>
-                        <li><a href="${pageContext.request.contextPath}/main/departmentSchedule">학과일정</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto " href="${pageContext.request.contextPath}/main/professorList">교수진목록</a></li>
-                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/main/notice">공지사항</a></li>
-                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/main/localUniversity">지역대학</a></li>
-<%--                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>--%>
-<%--                    <ul>--%>
-<%--                        <li><a href="#"></a></li>--%>
-<%--                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>--%>
-<%--                            <ul>--%>
-<%--                                <li><a href="#">Deep Drop Down 1</a></li>--%>
-<%--                                <li><a href="#">Deep Drop Down 2</a></li>--%>
-<%--                                <li><a href="#">Deep Drop Down 3</a></li>--%>
-<%--                                <li><a href="#">Deep Drop Down 4</a></li>--%>
-<%--                                <li><a href="#">Deep Drop Down 5</a></li>--%>
-<%--                            </ul>--%>
-<%--                        </li>--%>
-<%--                        <li><a href="#">Drop Down 2</a></li>--%>
-<%--                        <li><a href="#">Drop Down 3</a></li>--%>
-<%--                        <li><a href="#">Drop Down 4</a></li>--%>
-<%--                    </ul>--%>
-<%--                </li>--%>
-<%--                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>--%>
-<%--                <li><a class="getstarted scrollto" href="#about">Get Started</a></li>--%>
+                <li><a class="nav-link scrollto" href="#">자료실</a></li>
+                <li><a class="nav-link scrollto" href="#">학습상담</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
     </div>
 </header>
+
