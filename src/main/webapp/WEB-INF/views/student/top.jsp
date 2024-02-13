@@ -115,13 +115,13 @@
                     </a>
                 </li>
 
-                <li class="menu-item active py-2 px-3">
+                <li class="menu-item py-2 px-3">
                     <a href="${pageContext.request.contextPath}/student/writeStudent">
                     <button type="button" class="btn btn-sm rounded-pill btn-outline-primary">
                         <span class="tf-icons bx bx-pie-chart-alt"></span>&nbsp; 마이페이지
                     </button>
                     </a>
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}/student">
                     <button type="button" class="btn btn-sm rounded-pill btn-outline-secondary">
                         <span class="tf-icons bx bx-bell"></span>&nbsp; 로그아웃
                     </button>
@@ -145,7 +145,7 @@
 
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="${pageContext.request.contextPath}/student/listStudent" class="menu-link">
+                            <a href="${pageContext.request.contextPath}/student/detailStudent" class="menu-link">
                                 <div data-i18n="Without menu">학생 정보</div>
                             </a>
                         </li>
@@ -341,18 +341,14 @@
                     <!-- /Search -->
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        김재희님 환영합니다. &nbsp&nbsp&nbsp&nbsp
                         <!-- Place this tag where you want the button to render. -->
-                        <li class="nav-item lh-1 me-3">
-                            <a
-                                    class="github-button"
-                                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                    data-icon="octicon-star"
-                                    data-size="large"
-                                    data-show-count="true"
-                                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                            >Star</a
-                            >
-                        </li>
+                        <!-- 마이 프로필 -->
+                        <a href="${pageContext.request.contextPath}/student"> <i class="bx bx-user me-2"></i>&nbsp&nbsp </a>
+                        <!-- 설정 -->
+                        <a href="${pageContext.request.contextPath}/student"> <i class="bx bx-cog me-2"></i>&nbsp&nbsp </a>
+                        <!-- 로그아웃 -->
+                        <a href="${pageContext.request.contextPath}/student"> <i class="bx bx-power-off me-2"></i> </a>
 
                         <!-- User -->
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -361,6 +357,7 @@
                                     <img src="../bootstrap/student/assets/img/jaehee.jpg" alt class="w-px-30 h-auto rounded-circle" />
                                 </div>
                             </a>
+
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
                                     <a class="dropdown-item" href="#">
