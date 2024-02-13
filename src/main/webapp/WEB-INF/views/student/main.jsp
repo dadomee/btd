@@ -7,7 +7,7 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="top.jsp"%>
-            <!-- Content wrapper -->
+<%--            <!-- Content wrapper -->
             <div class="content-wrapper">
                 <!-- Content -->
 
@@ -544,5 +544,5 @@
                         <!--/ Transactions -->
                     </div>
                 </div>
-                <!-- / Content -->
+                <!-- / Content -->--%>
 <%@ include file="bottom.jsp"%>

@@ -14,7 +14,7 @@ public class StudentService implements StudentDAO {
 
     public StudentService(SqlSessionTemplate sqlSession) { this.sqlSession = sqlSession; }
 
-    public List<StudentDTO> studentList() { return sqlSession.selectList("studentList"); }
+    public StudentDTO studentDetail(int student_id) { return sqlSession.selectOne("studentDetail", student_id); }
     public List<StudentStatusDTO> studentStatusList() { return sqlSession.selectList("studentStatusList"); }
     public List<TuitionDTO> tuitionList() { return sqlSession.selectList("tuitionList"); }
     public List<ScholarshipDTO> scholarshipList() { return sqlSession.selectList("scholarshipList"); }
