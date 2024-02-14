@@ -3,35 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dsjh.btd.dao.StudentDAO">
-    <select id="myPageList" resultType="StaffDTO">
-        SELECT * FROM staff_tb;
-    </select>
-    <select id="profList" resultType="ProfessorDTO">
-        SELECT prof.*, depart.depart_name
-        FROM btd.department_tb depart
-                 INNER JOIN btd.professor_tb prof ON depart.depart_id = prof.depart_id;
-    </select>
     <select id="studentDetail" resultType="StudentDTO">
         SELECT * FROM student_tb stu WHERE stu.student_id = #{student_id};
-    </select>
-    <select id="departList" resultType="DepartmentDTO">
-        SELECT * FROM department_tb;
-    </select>
-    <select id="getCollegeName" resultType="CollegeDTO">
-        SELECT college_name FROM college_tb;
-    </select>
-    <select id="subList" resultType="SubjectDTO">
-        SELECT sub.*,dep.depart_name,prof.prof_name
-        from subject_tb sub
-            inner join department_tb dep on sub.depart_id = dep.depart_id
-            inner join professor_tb prof on sub.prof_id = prof.prof_id
-        order by sub.sub_year asc, sub.sub_semester asc;
-    </select>
-    <insert id="insertDepartment" parameterType="DepartmentDTO">
-        insert into department_tb(depart_name, college_name, depart_tel) values (#{depart_name},#{college_name},#{depart_tel});
-    </insert>
-    <select id="getProfName" resultType="ProfessorDTO">
-        SELECT prof_name from professor_tb where depart_id
-        IN (select depart_id from department_tb where depart_name= #{depart_name})
     </select>
 </mapper>
