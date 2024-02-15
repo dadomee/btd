@@ -37,4 +37,10 @@
         SELECT prof_name from professor_tb where depart_id
         IN (select depart_id from department_tb where depart_name= #{depart_name})
     </select>
+    <select id="listTuition" resultType="ChargeInfoDTO">
+        select char_type, char_amount from charge_info_tb where char_type = '등록금';
+    </select>
+    <select id="listSchol" resultType="ChargeInfoDTO">
+        select char_type, char_name,char_amount from charge_info_tb where char_type ='장학금';
+    </select>
 </mapper>

@@ -243,7 +243,7 @@
                 </a>
                 <div class="collapse" id="list_tab">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href=${pageContext.request.contextPath}/admin/listStudent"">학생 목록</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listStudent">학생 목록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listDepartment">학과 목록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listSubject">과목 목록</a></li>
                         <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/listProfessor">교수 목록</a></li>
