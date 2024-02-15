@@ -22,7 +22,6 @@ public class AdminService implements AdminDAO {
     }
  
     public int insertDepartment(DepartmentDTO dto){
-        System.out.println(dto);
         int res = sqlSession.insert("insertDepartment",dto);
         return res;
     }
@@ -45,4 +44,7 @@ public class AdminService implements AdminDAO {
     public List<ProfessorDTO> getProfName(String depart_name){
         return  sqlSession.selectList("getProfName");
     }
+
+    public List<ChargeInfoDTO> listSchol(){ return sqlSession.selectList("listSchol");}
+    public List<ChargeInfoDTO> listTuition(){ return sqlSession.selectList("listTuition");}
 }

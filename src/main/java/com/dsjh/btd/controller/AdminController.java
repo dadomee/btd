@@ -124,7 +124,7 @@ public class AdminController {
         return mav;
     }
     @GetMapping("admin/listStudent")
-    public ModelAndView listSutdent(){
+    public ModelAndView listStudent(){
         ModelAndView mav = new ModelAndView();
         return mav;
     }
@@ -185,11 +185,6 @@ public class AdminController {
         ModelAndView mav = new ModelAndView();
         return mav;
     }
-    @GetMapping("admin/infoAmount")
-    public ModelAndView infoAmount(){
-        ModelAndView mav = new ModelAndView();
-        return mav;
-    }
     @GetMapping("admin/listChar")
     public ModelAndView listChar(){
         ModelAndView mav = new ModelAndView();
@@ -208,6 +203,16 @@ public class AdminController {
     @GetMapping("admin/listSchol")
     public ModelAndView listSChol(){
         ModelAndView mav = new ModelAndView();
+        return mav;
+    }
+    @GetMapping("admin/infoAmount")
+    public ModelAndView infoAmount(){
+        ModelAndView mav = new ModelAndView();
+        List<ChargeInfoDTO> tlist = adminService.listTuition();
+        List<ChargeInfoDTO> slist = adminService.listSchol();
+        mav.addObject("tuition",tlist);
+        mav.addObject("scholarship",slist);
+        mav.setViewName("admin/infoAmount");
         return mav;
     }
 }
