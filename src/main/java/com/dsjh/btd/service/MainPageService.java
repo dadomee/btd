@@ -47,10 +47,12 @@ public class MainPageService implements MainPageDAO {
         return sqlSession.selectList("professorList");
     }
 
+    // 공지사항 목록
     public List<NoticeDTO> noticeList() {
         return sqlSession.selectList("noticeList");
     }
 
+    // 공지사항 내용
     public NoticeDTO noticeContent(int notice_id) {
         return sqlSession.selectOne("noticeContent", notice_id);
     }

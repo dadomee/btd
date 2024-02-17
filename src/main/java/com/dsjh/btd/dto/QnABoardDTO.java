@@ -20,10 +20,6 @@ public class QnABoardDTO {
     private int prof_id;            // 답변자
     private int qBoard_view;        // 조회수
     private Date qBoard_regdate;    // 작성일
-    private String qBoard_img1;     // 사진1
-    private String qBoard_img2;     // 사진2
-    private String qBoard_img3;     // 사진3
-    private String qBoard_img4;     // 사진4
     private String qBoard_file1;    // 파일1
     private String qBoard_file2;    // 파일2
     private String qBoard_file3;    // 파일3

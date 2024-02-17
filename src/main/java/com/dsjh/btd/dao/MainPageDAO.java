@@ -29,5 +29,6 @@ public interface MainPageDAO {
     // 공지사항 목록
     public List<NoticeDTO> noticeList();
 
+    // 공지사항 내용
     public NoticeDTO noticeContent(int notice_id);
 }
