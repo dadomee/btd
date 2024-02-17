@@ -58,3 +58,4 @@
 </c:forEach>
 </body>
 </html>
+<jsp:include page="profBottom.jsp" flush="false"/>

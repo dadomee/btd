@@ -80,7 +80,7 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto " href="${pageContext.request.contextPath}/main/professorList">교수진목록</a></li>
-                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/main/notice">공지사항</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/main/noticeList">공지사항</a></li>
                 <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/main/localUniversity">지역대학</a></li>
 <%--                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>--%>
 <%--                    <ul>--%>

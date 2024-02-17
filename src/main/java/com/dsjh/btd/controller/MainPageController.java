@@ -1,5 +1,6 @@
 package com.dsjh.btd.controller;
 
+import com.dsjh.btd.dto.NoticeDTO;
 import com.dsjh.btd.dto.ProfessorDTO;
 import com.dsjh.btd.dto.SubjectDTO;
 import com.dsjh.btd.dto.SubjectDetailDTO;
@@ -22,9 +23,13 @@ public class MainPageController {
     // 메인페이지
     @GetMapping("/")
     public ModelAndView mainPage() {
+        // 교수진소개
         List<ProfessorDTO> profList = mainPageService.professorList();
+        // 공지사항
+        List<NoticeDTO> noticeList = mainPageService.noticeList();
         ModelAndView mav = new ModelAndView();
         mav.addObject("profList", profList);
+        mav.addObject("noticeList", noticeList);
         mav.setViewName("mainPage");
         return mav;
     }
@@ -107,10 +112,22 @@ public class MainPageController {
         return mav;
     }
     
+    // 공지사항 목록
+    @GetMapping("/main/noticeList")
+    public ModelAndView noticeList() {
+        List<NoticeDTO> noticeList = mainPageService.noticeList();
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("noticeList", noticeList);
+        mav.setViewName("main/noticeList");
+        return mav;
+    }
+    
     // 공지사항
     @GetMapping("/main/notice")
-    public ModelAndView notice() {
+    public ModelAndView notice(int notice_id) {
+        NoticeDTO dto = mainPageService.noticeContent(notice_id);
         ModelAndView mav = new ModelAndView();
+        mav.addObject("notice", dto);
         mav.setViewName("main/notice");
         return mav;
     }
