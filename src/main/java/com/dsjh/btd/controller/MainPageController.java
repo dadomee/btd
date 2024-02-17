@@ -122,7 +122,7 @@ public class MainPageController {
         return mav;
     }
     
-    // 공지사항
+    // 공지사항 내용
     @GetMapping("/main/notice")
     public ModelAndView notice(int notice_id) {
         NoticeDTO dto = mainPageService.noticeContent(notice_id);
