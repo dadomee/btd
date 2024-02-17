@@ -69,7 +69,7 @@
         where sub_tb.sub_name like concat('%', #{searchString}, '%');
     </select>
 
-    <!-- 교수진 소개 -->
+    <!-- 교수진 목록 -->
     <select id="professorList" resultType="ProfessorDTO">
         select
             prof_tb.prof_id,
