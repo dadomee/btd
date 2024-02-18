@@ -1,9 +1,6 @@
 package com.dsjh.btd.dao;
 
-import com.dsjh.btd.dto.DepartmentDTO;
-import com.dsjh.btd.dto.ProfessorDTO;
-import com.dsjh.btd.dto.SubjectDTO;
-import com.dsjh.btd.dto.SubjectDetailDTO;
+import com.dsjh.btd.dto.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,4 +26,9 @@ public interface MainPageDAO {
     // 교수진 소개
     public List<ProfessorDTO> professorList();
 
+    // 공지사항 목록
+    public List<NoticeDTO> noticeList();
+
+    // 공지사항 내용
+    public NoticeDTO noticeContent(int notice_id);
 }

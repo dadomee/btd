@@ -25,31 +25,42 @@
         </div>
     </form>
 </div>
-<table class="table">
-    <thead>
-    <tr align="center">
-        <th scope="col">학년 / 학기 구분</th>
-        <th scope="col">교과구분</th>
-        <th scope="col">과목명</th>
-        <th scope="col">수업유형</th>
-        <th scope="col">시험유형</th>
-        <th scope="col">중간과제 유무</th>
-        <th scope="col">대체과제 유무</th>
-    </tr>
-    </thead>
-    <tbody>
-<c:forEach var="subDetail" items="${subDetail}">
-    <tr align="center">
-        <td>${subDetail.sub_year}학년 / ${subDetail.sub_semester}학기</td>
-        <td>${subDetail.sub_type}</td>
-        <td>${subDetail.sub_name}</td>
-        <td>${subDetail.sub_detail_type} 수업</td>
-        <td>${subDetail.sub_detail_exam} 시험</td>
-        <td>${subDetail.sub_detail_project}</td>
-        <td>${subDetail.sub_detail_substitute}</td>
-    </tr>
-</c:forEach>
-    </tbody>
-</table>
+<section id="services" class="services">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr align="center">
+                                <th scope="col">학년 / 학기 구분</th>
+                                <th scope="col">교과구분</th>
+                                <th scope="col">과목명</th>
+                                <th scope="col">수업유형</th>
+                                <th scope="col">시험유형</th>
+                                <th scope="col">중간과제 유무</th>
+                                <th scope="col">대체과제 유무</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="subDetail" items="${subDetail}">
+                            <tr align="center">
+                                <td>${subDetail.sub_year}학년 / ${subDetail.sub_semester}학기</td>
+                                <td>${subDetail.sub_type}</td>
+                                <td>${subDetail.sub_name}</td>
+                                <td>${subDetail.sub_detail_type} 수업</td>
+                                <td>${subDetail.sub_detail_exam} 시험</td>
+                                <td>${subDetail.sub_detail_project}</td>
+                                <td>${subDetail.sub_detail_substitute}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
+<jsp:include page="../mainBottom.jsp" flush="false"/>

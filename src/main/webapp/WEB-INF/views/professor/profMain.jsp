@@ -10,31 +10,21 @@
 <html>
 <head>
     <jsp:include page="profTop.jsp" flush="false"/>
-    <title>Title</title>
+    <title>컴퓨터과학과 교수페이지</title>
 </head>
 <body>
-<section id="hero" class="d-flex align-items-center">
+<section id="why-us" class="why-us">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin:0 auto; width:1000px;">
-                <img src="../bootstrap/professor/img/profMain.jpg" class="img-fluid" alt="교수페이지사진">
+            <div class="col-lg-3">
+                <c:forEach var="profInfo" items="${profInfo}">
+                    <div class="box">
+                        <h4>${profInfo.prof_name} 교수</h4>
+                        <h4>${profInfo.depart_name}</h4>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </div>
-</section><!-- End Hero -->
-<c:forEach var="profInfo" items="${profInfo}">
-<div class="col-md-4 stretch-card grid-margin">
-    <div class="card bg-gradient-info card-img-holder text-white">
-        <div class="card-body">
-            <img src="../bootstrap/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-            <h2 class="font-weight-normal mb-3">${profInfo.prof_name}교수<i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
-            </h2>
-            <h2 class="mb-5">${profInfo.depart_name}</h2>
-            <h6 class="card-text">Decreased by 10%</h6>
-        </div>
-    </div>
-</div>
-
-
-</c:forEach>
+</section>
 <jsp:include page="profBottom.jsp" flush="false"/>

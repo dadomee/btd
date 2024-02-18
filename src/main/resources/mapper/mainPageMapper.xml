@@ -69,7 +69,7 @@
         where sub_tb.sub_name like concat('%', #{searchString}, '%');
     </select>
 
-    <!-- 교수진 소개 -->
+    <!-- 교수진 목록 -->
     <select id="professorList" resultType="ProfessorDTO">
         select
             prof_tb.prof_id,
@@ -84,6 +84,33 @@
                       on depart_tb.depart_id = prof_tb.depart_id
                  join subject_tb sub_id
                       on sub_id.prof_id = prof_tb.prof_id
-        group by prof_id
+        group by prof_id;
+    </select>
+
+    <!-- 공지사항 목록 -->
+    <select id="noticeList" resultType="NoticeDTO">
+        select
+            notice_id,
+            notice_title,
+            notice_content,
+            notice_type,
+            notice_view,
+            notice_regdate,
+            notice_file1
+        from notice_tb;
+    </select>
+
+    <!-- 공지사항 내용 -->
+    <select id="noticeContent" parameterType="int" resultType="NoticeDTO">
+        select
+            notice_id,
+            notice_title,
+            notice_content,
+            notice_type,
+            notice_view,
+            notice_regdate,
+            notice_file1
+        from notice_tb
+        where notice_id = #{notice_id};
     </select>
 </mapper>

@@ -70,3 +70,4 @@
     <input type="text" id="datePicker" class="form-control" value="2024-02-24">
 </body>
 </html>
+<jsp:include page="../mainBottom.jsp" flush="false"/>

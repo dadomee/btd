@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>컴퓨터과학과 교수</title>
+    <title>컴퓨터과학과 교수페이지</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -53,6 +53,9 @@
 <header id="header" class="fixed-top">
     <ul class="navbar-nav navbar-nav-right" style="position : relative; left : 1500px;">
         <li class="nav-item nav-logout d-none d-lg-block">
+            <a class="nav-link" href="${pageContext.request.contextPath}/professor/professorManagement?prof_id=1">
+               관리 페이지
+            </a>
             <a class="nav-link" href="#">
                 <i class="mdi mdi-power">&nbsp;sign in</i>
             </a>
@@ -64,11 +67,10 @@
 
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="/">메인페이지</a></li>
-                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/professorInfo">교수소개</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/professorInfo?prof_id=1">교수소개</a></li>
                 <li class="dropdown"><a href="#"><span>강의목록</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">test</a></li>
@@ -82,4 +84,13 @@
         </nav><!-- .navbar -->
     </div>
 </header>
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" style="margin:0 auto; width:1000px;">
+                <img src="../bootstrap/professor/img/profMain.jpg" class="img-fluid" alt="교수페이지사진">
+            </div>
+        </div>
+    </div>
+</section><!-- End Hero -->
 

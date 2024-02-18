@@ -13,27 +13,6 @@
     <title>전공교과소개</title>
 </head>
 <body>
-<%--<div class="table-responsive">--%>
-<%--    <table class="table align-middle">--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <th scope="col">학년 / 학기</th>--%>
-<%--            <th scope="col">유형(전공 / 일반)</th>--%>
-<%--            <th scope="col">교과명</th>--%>
-<%--            <th scope="col">주요내용</th>--%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-<%--        <tbody>--%>
-<%--        <tr>--%>
-<%--            <td>${subInfo.sub_semester}학년 / ${subInfo.sub_semester}학기</td>--%>
-<%--            <td>${subInfo.sub_type}</td>--%>
-<%--            <td>${subInfo.sub_name}</td>--%>
-<%--            <td>${subInfo.sub_info}</td>--%>
-<%--        </tr>--%>
-<%--        </tbody>--%>
-<%--    </table>--%>
-<%--</div>--%>
-
 <section id="breadcrumbs" class="breadcrumbs">
     <div class="container">
 
@@ -42,8 +21,6 @@
 
     </div>
 </section><!-- End Breadcrumbs -->
-
-
 <section id="services" class="services">
     <div class="container">
         <div class="row">
@@ -105,47 +82,8 @@
                 </div><!-- End .content-->
             </div>
         </div>
-
     </div>
 </section><!-- End Services Section -->
-
-
-<%--<div class="container">--%>
-<%--    <div class="row">--%>
-<%--        <div class="col-lg-3 col-md-4 mt-4">--%>
-<%--            <div class="card" style="width: 18rem;">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title">학년/학기</h5>--%>
-<%--&lt;%&ndash;        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>&ndash;%&gt;--%>
-<%--                    <p class="card-text">${subInfo.sub_semester}학년/${subInfo.sub_semester}학기</p>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--        <div class="col-lg-3 col-md-3 mt-4">--%>
-<%--            <div class="card" style="width: 18rem;">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title">유형</h5>--%>
-<%--                    <p class="card-text">${subInfo.sub_type}</p>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="col-lg-3 col-md-3 mt-4">--%>
-<%--            <div class="card" style="width: 18rem;">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title">교과명</h5>--%>
-<%--                    <p class="card-text">${subInfo.sub_name}</p>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="col-lg-3 col-md-3 mt-4">--%>
-<%--            <div class="card" style="width: 18rem;">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title">주요내용</h5>--%>
-<%--                    <p class="card-text">${subInfo.sub_info}</p>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--</div>--%>
 </body>
 </html>
+<jsp:include page="../mainBottom.jsp" flush="false"/>
