@@ -11,50 +11,25 @@
 <!DOCTYPE html>
 <html lang="en,kr">
 <script>
-    function get_prof(depart_name) {
-        if($("select[name=depart_name] > option:selected").val() == "2"){
-            $("#prof_name").show();
-            $("#prof_name > option").remove();
-            $("#prof_name").attr("disabled",true);
-            $("#prof_name").append("<option value=\"\">--선택--</option>");
-
-            var type = $("#depart_name").val();
-
-            var submitObj = new Object();
-            submitObj.depart_name= type;
-
-            $.ajax({
-                url: "getProf",
-                type: "GET",
-                contentType: "application/json;charset=UTF-8",
-                data:{ depart_name: type },
-                dataType : "json",
-                progress: true
-            })
-                .done(function(data) {
-
-                    $('#prof_name').children('option:not(:first)').remove();
-
-                    var laborOption = "";
-                    for(var k in data.prof){
-                        var obj = data.prof[k];
-                        var prof_name= obj.prof_name;
-
-                        laborOption = "<option value='" + prof_name + "'>" + prof_name + "</option>";
-                        $("#prof_name").append(laborOption);
-                    }
-
-                    $("#prof_name").attr("disabled",false);
-
-
-                })
-                .fail(function(e) {
-                    alert("FAIL - "+e);
-                })
-                .always(function() {
-                    $("#prof_name").attr("disabled",false);
+    function get_prof() {
+        var depart_name = $("#depart_name").val();
+        $.ajax({
+            type: 'GET',
+            url: '/admin/getProf',
+            data: {depart_name: depart_name},
+            dataType: 'text',
+            success: function (result) {
+                console.log("결과값" + result.prof_name);
+                var profSelect = $("#prof_name");
+                profSelect.empty(); // 기존 옵션 제거
+                profSelect.append($("<option>").attr("value", "").text("담당 교수를 선택하세요"));
+                $.each(result, function(index, value) {
+                    profSelect.append($("<option>").attr("value", value).text(value));
                 });
-        }
+            }
+        }).fail(function (error) {
+            alert(error);
+        })
     }
 </script>
 
@@ -70,17 +45,17 @@
                         <div class="card-body">
                             <h4 class="card-title">과목 정보</h4>
                             <p class="card-description"> 과목 정보를 입력해 주세요. </p>
-                            <form class="forms-sample">
+                            <form id="form" class="forms-sample">
                                 <div class="form-group">
                                     <label for="sub_name">과목명</label>
                                     <input type="text" class="form-control" id="sub_name" name=sub_name" placeholder="과목명">
                                 </div>
                                 <div class="form-group">
                                     <label for="depart_name">학과</label>
-                                    <select class="form-control form-control-sm" name="depart_name" onchange="get_prof(depart_name)">
+                                    <select class="form-control form-control-sm" name="depart_name" onchange="get_prof()">
                                         <option value="">학과를 선택하세요</option>
                                         <c:forEach var="depart" items="${depart}">
-                                            <option value="${depart.depart_name}" id="depart_name" name="depart_name">${depart.depart_name}</option>
+                                            <option value="${depart.depart_name}" id="depart_name">${depart.depart_name}</option>
                                         </c:forEach>
                                     </select>
 
@@ -89,6 +64,9 @@
                                     <label for="prof_name">담당 교수</label>
                                     <select class="form-control form-control-sm" id="prof_name" name="prof_name">
                                         <option value="">담당 교수를 선택하세요</option>
+                                        <c:forEach var="prof" items="${prof}">
+                                            <option value="${prof.prof_name}">${prof.prof_name}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                                 <div class="form-group">

@@ -42,9 +42,8 @@ public class AdminService implements AdminDAO {
     }
 
     public List<ProfessorDTO> getProfName(String depart_name){
-        return  sqlSession.selectList("getProfName");
+        return  sqlSession.selectList("getProfName",depart_name);
     }
-
     public List<ChargeInfoDTO> listSchol(){ return sqlSession.selectList("listSchol");}
     public List<ChargeInfoDTO> listTuition(){ return sqlSession.selectList("listTuition");}
 }

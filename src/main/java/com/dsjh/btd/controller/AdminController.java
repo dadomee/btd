@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +24,8 @@ import java.util.Map;
 public class AdminController {
     @Autowired
     private AdminService adminService;
+    private String departName;
+
     @GetMapping("admin")
     public String adminMain(){
         return "admin/main";
@@ -90,26 +93,13 @@ public class AdminController {
         mav.setViewName("admin/writeSubject");
         return mav;
     }
-    @RequestMapping(value = "admin/getProf", produces = "application/json; charset=UTF-8", method= RequestMethod.GET)
-    @ResponseBody
-    public void getProfOption(HttpServletResponse res,@RequestBody Map<String, String> requestBody) throws IOException {
-        String depart_name = requestBody.get("depart_name");
-        JSONObject obj = new JSONObject();
-        res.setContentType("text/html; charset=UTF-8");
-        PrintWriter out = res.getWriter();
-        System.out.println("디파트 네임 넘어오니?"+depart_name);
-        try{
-            List<ProfessorDTO> plist = adminService.getProfName(depart_name);
-
-            obj.put("prof", plist);
-
-        }catch(Exception e){
-            System.out.println(e.toString());
-            obj.put("res", "error");
-
+    @RequestMapping(value = "admin/getProf", method= RequestMethod.GET)
+    public void getProfOption(HttpServletResponse res, @RequestParam String depart_name){
+        List<ProfessorDTO> prof = adminService.getProfName(depart_name);
+        List<DepartmentDTO> depart = adminService.departList();
         }
-        out.print(obj);
-    }
+
+
     @PostMapping("admin/writeSubject")
     public ModelAndView writeSubPro(HttpServletRequest req){
         ModelAndView mav = new ModelAndView();
