@@ -89,22 +89,45 @@ public class AdminController {
     public ModelAndView writeSub(HttpServletRequest req){
         ModelAndView mav = new ModelAndView();
         List<DepartmentDTO> dlist = adminService.departList();
+        List<ProfessorDTO> plist = adminService.profList();
         mav.addObject("depart",dlist);
+        mav.addObject("prof",plist);
         mav.setViewName("admin/writeSubject");
         return mav;
     }
-    @RequestMapping(value = "admin/getProf", method= RequestMethod.GET)
-    public void getProfOption(HttpServletResponse res, @RequestParam String depart_name){
-        List<ProfessorDTO> prof = adminService.getProfName(depart_name);
-        List<DepartmentDTO> depart = adminService.departList();
-        }
-
 
     @PostMapping("admin/writeSubject")
-    public ModelAndView writeSubPro(HttpServletRequest req){
+    public ModelAndView writesSubPro(HttpServletRequest req){
         ModelAndView mav = new ModelAndView();
+        SubjectDTO dto = new SubjectDTO();
+        if(req.getParameter("sub_info")!=null) {
+            dto.setSub_info(req.getParameter("sub_info"));
+        }
+        dto.setSub_name(req.getParameter("sub_name"));
+        dto.setDepart_name(req.getParameter("depart_name"));
+        dto.setSub_grade(Integer.parseInt(req.getParameter("sub_grade")));
+        dto.setSub_semester(Integer.parseInt(req.getParameter("sub_semester")));
+        dto.setProf_name(req.getParameter("prof_name"));
+        dto.setSub_type(req.getParameter("sub_type"));
+        dto.setSub_year(Integer.parseInt(req.getParameter("sub_year")));
+
+        int res = adminService.insertSub(dto);
+        if(res>0){
+            mav.addObject("msg", "과목 등록이 완료되었습니다.");
+            mav.setViewName("/message");
+        }else{
+            mav.addObject("msg", "과목 등록에 실패하였습니다.");
+            mav.setViewName("/message");
+        }
         return mav;
+
     }
+//    // 동적 셀렉트 박스 구현중 잠시 대기 ..
+//    @RequestMapping(value = "admin/getProf", method= RequestMethod.GET)
+//    public void getProfOption(HttpServletResponse res, @RequestParam String depart_name){
+//        List<ProfessorDTO> prof = adminService.getProfName(depart_name);
+//        List<DepartmentDTO> depart = adminService.departList();
+//        }
     @GetMapping("admin/listSubject")
     public ModelAndView listSub(){
         ModelAndView mav = new ModelAndView();

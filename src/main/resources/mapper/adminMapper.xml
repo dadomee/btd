@@ -43,4 +43,14 @@
     <select id="listSchol" resultType="ChargeInfoDTO">
         select char_type, char_name,char_amount from charge_info_tb where char_type ='장학금';
     </select>
+    <insert id="insertSub" parameterType="SubjectDTO">
+        insert into subject_tb(sub_name,depart_id,prof_id,sub_type, sub_semester, sub_year, sub_grade, sub_status, sub_regdate, sub_info)
+        values(#{sub_name},#{depart_id},#{prof_id},#{sub_type},#{sub_semester},#{sub_year},#{sub_grade},'신설',now(),#{sub_info})
+    </insert>
+    <select id="getDepartId" parameterType="String" resultType="int">
+        select depart_id from department_tb where depart_name = #{depart_name}
+    </select>
+    <select id="getProfId" parameterType="String" resultType="int">
+        select prof_id from professor_tb where prof_name = #{prof_name}
+    </select>
 </mapper>

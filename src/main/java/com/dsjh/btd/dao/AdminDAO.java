@@ -17,4 +17,5 @@ public interface AdminDAO {
     public List<ProfessorDTO> getProfName(String depart_name);
     public List<ChargeInfoDTO> listTuition();
     public List<ChargeInfoDTO> listSchol();
+    public int insertSub(SubjectDTO dto);
 }
