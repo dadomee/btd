@@ -56,7 +56,6 @@
                     <div class="card-body">
                         <h4 class="card-title">학과 정보</h4>
                         <p class="card-description"> 학과 정보를 입력해 주세요. </p>
-                        <!-- form에 onsubmit = "return false" 달아 놓으면 엔터키 서브밋 방지-->
                         <form id="f" class="forms-sample" action="writeDepartment" onclick="javascript:checkSub()" method="post" onkeydown="preventSubmit(event)">
                             <div class="form-group">
                                 <label for="depart_name">학과명</label>

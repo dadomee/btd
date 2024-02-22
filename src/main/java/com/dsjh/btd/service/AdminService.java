@@ -42,9 +42,21 @@ public class AdminService implements AdminDAO {
     }
 
     public List<ProfessorDTO> getProfName(String depart_name){
-        return  sqlSession.selectList("getProfName");
+        return  sqlSession.selectList("getProfName",depart_name);
     }
-
     public List<ChargeInfoDTO> listSchol(){ return sqlSession.selectList("listSchol");}
     public List<ChargeInfoDTO> listTuition(){ return sqlSession.selectList("listTuition");}
+    public int insertSub(SubjectDTO dto){
+        int depart_id;
+        int prof_id;
+        String depart_name = dto.getDepart_name();
+        depart_id = sqlSession.selectOne("getDepartId",depart_name);
+        String prof_name = dto.getProf_name();
+        prof_id = sqlSession.selectOne("getProfId",prof_name);
+        dto.setDepart_id(depart_id);
+        dto.setProf_id(prof_id);
+        int res = sqlSession.insert("insertSub",dto);
+         return res;
+    }
+
 }
