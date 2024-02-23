@@ -19,10 +19,6 @@ public class NoticeDTO {
     private String notice_type;         // 공지사항 타입 : 학사, 시험/성적, 기타
     private int notice_view;            // 조회수
     private Date notice_regdate;        // 작성일
-    private String notice_img1;         // 사진1
-    private String notice_img2;         // 사진2
-    private String notice_img3;         // 사진3
-    private String notice_img4;         // 사진4
     private String notice_file1;        // 파일1
     private String notice_file2;        // 파일2
     private String notice_file3;        // 파일3

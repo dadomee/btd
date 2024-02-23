@@ -26,6 +26,7 @@ public class StudentDTO {
     private int stu_admission_grade;        // 학생 입학 학년
     private String stu_role;                // 학생 학적구분
     private int local_id;                   // 소속 지역학교 주소
+    private String local_name;              /** 소속 지역학교 이름 **/
     private String stu_undergrad;           // 학생 학부
     private String stu_major;               // 학생 전공
     private int stu_final_semester;         // 학생 최종등록학기

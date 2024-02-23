@@ -3,35 +3,42 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dsjh.btd.dao.StudentDAO">
-    <select id="myPageList" resultType="StaffDTO">
-        SELECT * FROM staff_tb;
+    <!-- 학생 정보 -->
+    <select id="studentDetail" parameterType="int" resultType="StudentDTO">
+        SELECT
+            stu_tb.*, local_name
+        FROM student_tb stu_tb
+            JOIN local_university_tb local_tb
+                ON stu_tb.local_id = local_tb.local_id
+        WHERE stu_tb.student_id = #{student_id}
+        GROUP BY student_id;
     </select>
-    <select id="profList" resultType="ProfessorDTO">
-        SELECT prof.*, depart.depart_name
-        FROM btd.department_tb depart
-                 INNER JOIN btd.professor_tb prof ON depart.depart_id = prof.depart_id;
+    <!-- 학생 등록금 정보 - 학사정보,수강신청, -->
+    <select id="studentTuition" parameterType="int" resultType="TuitionDTO">
+        SELECT tui_semester, tui_status, tui_amount
+        FROM tuition_tb
+        WHERE student_id = #{student_id};
     </select>
-    <select id="studentDetail" resultType="StudentDTO">
-        SELECT * FROM student_tb stu WHERE stu.student_id = #{student_id};
+    <!-- 학생 학점 정보 - 수강신청,  -->
+    <select id="studentGrade" parameterType="int" resultType="ManageGradeDTO">
+        SELECT mg_id, sub_type, grade, major_total, general_total, total, can_graduate
+        FROM manage_grade_tb
+        WHERE student_id = #{student_id};
     </select>
-    <select id="departList" resultType="DepartmentDTO">
-        SELECT * FROM department_tb;
+    <!-- 수강신청 과목정보 -->
+    <select id="subjectDetail" parameterType="int" resultType="SubjectDTO">
+        SELECT sub_tb.*, dep_tb.depart_name, prof_tb.prof_name
+        FROM subject_tb sub_tb
+                 INNER JOIN department_tb dep_tb ON sub_tb.depart_id = dep_tb.depart_id
+                 INNER JOIN professor_tb prof_tb ON sub_tb.prof_id = prof_tb.prof_id
+        WHERE sub_tb.sub_id = #{sub_id};
     </select>
-    <select id="getCollegeName" resultType="CollegeDTO">
-        SELECT college_name FROM college_tb;
-    </select>
-    <select id="subList" resultType="SubjectDTO">
-        SELECT sub.*,dep.depart_name,prof.prof_name
-        from subject_tb sub
-            inner join department_tb dep on sub.depart_id = dep.depart_id
-            inner join professor_tb prof on sub.prof_id = prof.prof_id
-        order by sub.sub_year asc, sub.sub_semester asc;
-    </select>
-    <insert id="insertDepartment" parameterType="DepartmentDTO">
-        insert into department_tb(depart_name, college_name, depart_tel) values (#{depart_name},#{college_name},#{depart_tel});
+    <!-- 수강신청 과목등록-->
+    <insert id="regSubjectWrite" parameterType="RegSubjectDTO">
+        INSERT INTO reg_subject_tb(student_id, sub_id) values (#{student_id}, #{sub_id});
     </insert>
-    <select id="getProfName" resultType="ProfessorDTO">
-        SELECT prof_name from professor_tb where depart_id
-        IN (select depart_id from department_tb where depart_name= #{depart_name})
+    <!-- 수강신청 과목목록-->
+    <select id="regSubjectList" parameterType="RegSubjectDTO">
+        SELECT sub_tb.* FROM reg_subject_tb reg_tb JOIN subject_tb sub_tb ON reg_tb.sub_id = sub_tb.sub_id;
     </select>
 </mapper>

@@ -146,17 +146,17 @@
                     <ul class="menu-sub">
                         <li class="menu-item">
                             <a href="${pageContext.request.contextPath}/student/detailStudent" class="menu-link">
-                                <div data-i18n="Without menu">학생 정보</div>
+                                <div data-i18n="Without menu">학생 정보⭐</div>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="${pageContext.request.contextPath}/student" class="menu-link">
-                                <div data-i18n="Without navbar">학적변동</div>
+                                <div data-i18n="Without navbar">학적변동⭐</div>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="${pageContext.request.contextPath}/student" class="menu-link">
-                                <div data-i18n="Container">등록 및 장학 정보</div>
+                                <div data-i18n="Container">등록 및 장학 정보⭐</div>
                             </a>
                         </li>
                         <li class="menu-item">
@@ -186,6 +186,11 @@
                         <div data-i18n="Account Settings">수강</div>
                     </a>
                     <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="${pageContext.request.contextPath}/student/regSubject" class="menu-link">
+                                <div data-i18n="Account">⭐수강 신청⭐</div>
+                            </a>
+                        </li>
                         <li class="menu-item">
                             <a href="${pageContext.request.contextPath}/student" class="menu-link">
                                 <div data-i18n="Account">수강 교과목 정보</div>
