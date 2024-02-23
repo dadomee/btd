@@ -3,7 +3,42 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dsjh.btd.dao.StudentDAO">
-    <select id="studentDetail" resultType="StudentDTO">
-        SELECT * FROM student_tb stu WHERE stu.student_id = #{student_id};
+    <!-- 학생 정보 -->
+    <select id="studentDetail" parameterType="int" resultType="StudentDTO">
+        SELECT
+            stu_tb.*, local_name
+        FROM student_tb stu_tb
+            JOIN local_university_tb local_tb
+                ON stu_tb.local_id = local_tb.local_id
+        WHERE stu_tb.student_id = #{student_id}
+        GROUP BY student_id;
+    </select>
+    <!-- 학생 등록금 정보 - 학사정보,수강신청, -->
+    <select id="studentTuition" parameterType="int" resultType="TuitionDTO">
+        SELECT tui_semester, tui_status, tui_amount
+        FROM tuition_tb
+        WHERE student_id = #{student_id};
+    </select>
+    <!-- 학생 학점 정보 - 수강신청,  -->
+    <select id="studentGrade" parameterType="int" resultType="ManageGradeDTO">
+        SELECT mg_id, sub_type, grade, major_total, general_total, total, can_graduate
+        FROM manage_grade_tb
+        WHERE student_id = #{student_id};
+    </select>
+    <!-- 수강신청 과목정보 -->
+    <select id="subjectDetail" parameterType="int" resultType="SubjectDTO">
+        SELECT sub_tb.*, dep_tb.depart_name, prof_tb.prof_name
+        FROM subject_tb sub_tb
+                 INNER JOIN department_tb dep_tb ON sub_tb.depart_id = dep_tb.depart_id
+                 INNER JOIN professor_tb prof_tb ON sub_tb.prof_id = prof_tb.prof_id
+        WHERE sub_tb.sub_id = #{sub_id};
+    </select>
+    <!-- 수강신청 과목등록-->
+    <insert id="regSubjectWrite" parameterType="RegSubjectDTO">
+        INSERT INTO reg_subject_tb(student_id, sub_id) values (#{student_id}, #{sub_id});
+    </insert>
+    <!-- 수강신청 과목목록-->
+    <select id="regSubjectList" parameterType="RegSubjectDTO">
+        SELECT sub_tb.* FROM reg_subject_tb reg_tb JOIN subject_tb sub_tb ON reg_tb.sub_id = sub_tb.sub_id;
     </select>
 </mapper>
