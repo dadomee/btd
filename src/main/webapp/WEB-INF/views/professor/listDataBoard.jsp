@@ -8,12 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="professorManageTop.jsp" flush="false"/>
+    <jsp:include page="profManageTop.jsp" flush="false">
+        <jsp:param name="prof_id" value="${prof_id}"/>
+    </jsp:include>
     <title>자료실 목록</title>
 </head>
 <body>
-
+    test
 </body>
 </html>
-<jsp:include page="professorManageBottom.jsp" flush="false"/>
+<jsp:include page="profManageBottom.jsp" flush="false"/>
 

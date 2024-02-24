@@ -77,9 +77,9 @@ public class MainPageController {
     // 교과과정
     @GetMapping("/main/subjectDetail")
     public ModelAndView subjectDetail() {
-        List<SubjectDetailDTO> subjectDetail = mainPageService.subjectDetail();
+        List<SubjectDetailDTO> subjectDetailInfo = mainPageService.subjectDetailInfo();
         ModelAndView mav = new ModelAndView();
-        mav.addObject("subDetail", subjectDetail);
+        mav.addObject("subDetail", subjectDetailInfo);
         mav.setViewName("main/subjectDetail");
         return mav;
     }
@@ -118,6 +118,16 @@ public class MainPageController {
         List<NoticeDTO> noticeList = mainPageService.noticeList();
         ModelAndView mav = new ModelAndView();
         mav.addObject("noticeList", noticeList);
+        mav.setViewName("main/noticeList");
+        return mav;
+    }
+
+    // 공지사항 - 키워드로 검색
+    @RequestMapping(value = "/findNotice", method={RequestMethod.POST})
+    public ModelAndView findNotice(String searchString) {
+        List<NoticeDTO> findNotice = mainPageService.findNotice(searchString);
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("noticeList", findNotice);
         mav.setViewName("main/noticeList");
         return mav;
     }

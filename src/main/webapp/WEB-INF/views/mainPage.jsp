@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="mainTop.jsp" flush="false"/>
-
 <section id="hero" class="d-flex align-items-center">
     <div class="container">
         <div class="row">
@@ -186,11 +186,11 @@
                             <tr align="center">
                                 <td style="width:10%;">${noticeList.notice_id}</td>
                                 <td style="width:70%;">
-                                    <a href="#">
-                                        ${noticeList.notice_title}
+                                    <a href="../main/notice?notice_id=${noticeList.notice_id}" class="link-dark">
+                                            [${noticeList.notice_type}]&nbsp;${noticeList.notice_title}
                                     </a>
                                 </td>
-                                <td style="width:20%;">${noticeList.notice_regdate}</td>
+                                <td style="width:20%;"><fmt:formatDate pattern="yyyy-MM-dd" value="${noticeList.notice_regdate}"/></td>
                             </tr>
                             </c:forEach>
                             </tbody>

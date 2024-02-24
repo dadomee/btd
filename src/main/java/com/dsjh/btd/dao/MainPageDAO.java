@@ -18,7 +18,7 @@ public interface MainPageDAO {
     public List<SubjectDTO> findSubject(String searchString);
 
     // 교과과정
-    public List<SubjectDetailDTO> subjectDetail();
+    public List<SubjectDetailDTO> subjectDetailInfo();
 
     // 교과과정 - 키워드로 검색
     public List<SubjectDetailDTO> findSubDetail(String searchString);
@@ -28,6 +28,9 @@ public interface MainPageDAO {
 
     // 공지사항 목록
     public List<NoticeDTO> noticeList();
+
+    // 공지사항 - 키워드로 검색
+    public List<NoticeDTO> findNotice(String searchString);
 
     // 공지사항 내용
     public NoticeDTO noticeContent(int notice_id);

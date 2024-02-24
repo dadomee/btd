@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="professorManageTop.jsp" flush="false"/>
+    <jsp:include page="profManageTop.jsp" flush="false">
+        <jsp:param name="prof_id" value="${prof_id}"/>
+    </jsp:include>
     <title>자료실 등록</title>
     <script type="text/javascript">
-        function check() {
+        function boardCheck() {
             if (f.data_title.value == "") {
                 alert("제목을 입력해주세요!")
                 f.data_title_title.focus()
@@ -28,7 +30,7 @@
 </head>
 <body>
 <br>
-<form name="f" action="${pageContext.request.contextPath}/professor/writeDataBoard" method="post" onsubmit="return check()">
+<form name="f" action="${pageContext.request.contextPath}/professor/writeDataBoard" method="post" onsubmit="return boardCheck()">
 <section id="services" class="services">
     <div class="container">
         <div class="card" style="width:1000px; position:relative; left:150px;">
@@ -85,4 +87,4 @@
 </form>
 </body>
 </html>
-<jsp:include page="professorManageBottom.jsp" flush="false"/>
+<jsp:include page="profManageBottom.jsp" flush="false"/>

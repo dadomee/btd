@@ -37,7 +37,7 @@
     </select>
 
     <!-- 교과과정 -->
-    <select id="subjectDetail" resultType="SubjectDetailDTO">
+    <select id="subjectDetailInfo" resultType="SubjectDetailDTO">
         select
             sub_tb.sub_year,
             sub_tb.sub_semester,
@@ -97,7 +97,23 @@
             notice_view,
             notice_regdate,
             notice_file1
-        from notice_tb;
+        from notice_tb
+        order by notice_regdate desc;
+    </select>
+
+    <!-- 공지사항 - 키워드로 검색 -->
+    <select id="findNotice" parameterType="String" resultType="NoticeDTO">
+        select
+            notice_id,
+            notice_title,
+            notice_content,
+            notice_type,
+            notice_view,
+            notice_regdate,
+            notice_file1
+        from notice_tb
+        where notice_title like concat('%', #{searchString}, '%')
+        order by notice_regdate desc;
     </select>
 
     <!-- 공지사항 내용 -->

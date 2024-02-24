@@ -32,8 +32,8 @@ public class MainPageService implements MainPageDAO {
     }
 
     // 교과과정
-    public List<SubjectDetailDTO> subjectDetail() {
-        return sqlSession.selectList("subjectDetail");
+    public List<SubjectDetailDTO> subjectDetailInfo() {
+        return sqlSession.selectList("subjectDetailInfo");
     }
     
     // 교과과정 - 키워드로 검색
@@ -50,6 +50,11 @@ public class MainPageService implements MainPageDAO {
     // 공지사항 목록
     public List<NoticeDTO> noticeList() {
         return sqlSession.selectList("noticeList");
+    }
+
+    // 공지사항 - 키워드로 검색
+    public List<NoticeDTO> findNotice(String searchString) {
+        return sqlSession.selectList("findNotice", searchString);
     }
 
     // 공지사항 내용

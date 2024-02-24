@@ -9,7 +9,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <jsp:include page="profTop.jsp" flush="false"/>
+    <jsp:include page="profTop.jsp" flush="false">
+        <jsp:param name="prof_id" value="${prof_id}"/>
+        <jsp:param name="profSub" value="${profSub}"/>
+    </jsp:include>
     <title>컴퓨터과학과 교수페이지</title>
 </head>
 <body>
@@ -24,6 +27,13 @@
                     </div>
                 </c:forEach>
             </div>
+            <c:forEach var="profSub" items="${profSub}">
+            <div class="col-lg-3">
+                    <div class="box">
+                        <h4>${profSub.sub_name}</h4>
+                    </div>
+            </div>
+            </c:forEach>
         </div>
     </div>
 </section>
