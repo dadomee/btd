@@ -10,7 +10,9 @@
 
 <html>
 <head>
-    <jsp:include page="professorManageTop.jsp" flush="false"/>
+    <jsp:include page="profManageTop.jsp" flush="false">
+        <jsp:param name="prof_id" value="${prof_id}" />
+    </jsp:include>
     <title>Title</title>
 </head>
 <body>
@@ -555,4 +557,4 @@
                     </div>
                 </div>
                 <!-- / Content -->
-<jsp:include page="professorManageBottom.jsp" flush="false"/>
+<jsp:include page="profManageBottom.jsp" flush="false"/>

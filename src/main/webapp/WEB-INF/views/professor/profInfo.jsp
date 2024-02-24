@@ -9,7 +9,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <jsp:include page="profTop.jsp" flush="false"/>
+    <jsp:include page="profTop.jsp" flush="false">
+        <jsp:param name="prof_id" value="${prof_id}" />
+    </jsp:include>
     <title>교수 소개</title>
 </head>
 <body>

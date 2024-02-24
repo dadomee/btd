@@ -21,10 +21,27 @@
                  join subject_tb sub_id
                       on sub_id.prof_id = prof_tb.prof_id
         where prof_tb.prof_id = #{prof_id}
-        group by prof_id
+        group by prof_id;
     </select>
 
-    <!-- 자료실 등록 -->
+    <!-- 강의 목록 -->
+    <select id="profSubject" parameterType="int" resultType="SubjectDTO">
+        select
+            sub_id,
+            sub_name
+        from subject_tb
+        where prof_id = #{prof_id};
+    </select>
+
+    <!-- 교수 전용 페이지 - 교수 정보 수정(이미지 처리 해야함) -->
+    <update id="profInfoUpdate" parameterType="ProfessorDTO">
+        update professor_tb
+        set prof_tel = #{prof_tel},
+            prof_email = #{prof_email}
+        where prof_id = #{prof_id};
+    </update>
+
+    <!-- 교수 전용 페이지 - 자료실 등록 -->
     <insert id="dataBoardInsert" parameterType="DataBoardDTO">
         insert into data_board_tb values(null,
                                          #{dBoard_title},

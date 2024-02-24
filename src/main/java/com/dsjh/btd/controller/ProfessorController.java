@@ -3,6 +3,7 @@ package com.dsjh.btd.controller;
 import com.dsjh.btd.dto.DataBoardDTO;
 import com.dsjh.btd.dto.DataBoardFileDTO;
 import com.dsjh.btd.dto.ProfessorDTO;
+import com.dsjh.btd.dto.SubjectDTO;
 import com.dsjh.btd.service.ProfessorService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -16,9 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -29,34 +28,66 @@ public class ProfessorController {
     // 교수 메인페이지
     @GetMapping("/professor/profMain")
     public ModelAndView profMain(int prof_id) {
+        // 교수소개
         List<ProfessorDTO> profInfo = professorService.professorInfo(prof_id);
+        // 강의목록
+        List<SubjectDTO> profSubject = professorService.profSubject(prof_id);
         ModelAndView mav = new ModelAndView();
         mav.addObject("profInfo", profInfo);
+        mav.addObject("profSub", profSubject);
+        mav.addObject("prof_id",prof_id);
         mav.setViewName("/professor/profMain");
         return mav;
     }
     
     // 교수 소개
-    @GetMapping("/professor/professorInfo")
+    @GetMapping("/professor/profInfo")
     public ModelAndView professorInfo(int prof_id) {
         List<ProfessorDTO> profInfo = professorService.professorInfo(prof_id);
         ModelAndView mav = new ModelAndView();
         mav.addObject("profInfo", profInfo);
-        mav.setViewName("/professor/professorInfo");
+        mav.addObject("prof_id",prof_id);
+        mav.setViewName("professor/profInfo");
         return mav;
     }
 
-    // 교수 시스템 페이지
-    @GetMapping("/professor/professorManagement")
+    // 교수 전용 페이지
+    @GetMapping("/professor/profManagement")
     public ModelAndView professorManagement(int prof_id) {
         List<ProfessorDTO> profInfo = professorService.professorInfo(prof_id);
         ModelAndView mav = new ModelAndView();
         mav.addObject("profInfo", profInfo);
-        mav.setViewName("/professor/professorManagement");
+        mav.addObject("prof_id", prof_id);
+        mav.setViewName("professor/profManagement");
         return mav;
     }
+
+    // 교수 전용 페이지 - 교수 정보 수정
+    @RequestMapping(value = "/professor/profUpdateInfo", method={RequestMethod.GET})
+    public ModelAndView profUpdateInfo(int prof_id) {
+        List<ProfessorDTO> profInfo = professorService.professorInfo(prof_id);
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("profInfo", profInfo);
+        mav.addObject("prof_id", prof_id);
+        mav.setViewName("/professor/profUpdateInfo");
+        return mav;
+    }
+
+    // 교수 전용 페이지 - 교수 정보 수정
+    @RequestMapping(value = "/professor/profUpdateInfo", method={RequestMethod.POST})
+    public ModelAndView profUpdateInfo2(int prof_id, @ModelAttribute ProfessorDTO dto) {
+        int res = professorService.profInfoUpdate(dto);
+        ModelAndView mav = new ModelAndView("message");
+        mav.addObject("prof_id", prof_id);
+        if (res > 0) {
+            mav.addObject("msg", "교수 정보 수정 성공");
+            mav.addObject("url", "/professor/profUpdateInfo?prof_id="+prof_id);
+         }
+        return mav;
+    }
+
     @RequestMapping(value = "/professor/writeDataBoard", method={RequestMethod.GET})
-    public ModelAndView writeDataBoard(HttpServletRequest req) throws IOException {
+    public ModelAndView writeDataBoard(int prof_id, HttpServletRequest req) throws IOException {
         int num = 0, re_group = 0, re_step = 0, re_level = 0;
         String dBoard_id = req.getParameter("dBoard_id");
         if (dBoard_id != null) {
@@ -66,7 +97,7 @@ public class ProfessorController {
             re_level = Integer.parseInt(req.getParameter("dBoard_re_level"));
         }
         ModelAndView mav = new ModelAndView();
-
+        mav.addObject("prof_id", prof_id);
         mav.addObject("dBoard_id", num);
         mav.addObject("dBoard_re_group", re_group);
         mav.addObject("dBoard_re_step", re_step);
@@ -77,7 +108,7 @@ public class ProfessorController {
     }
 
     @RequestMapping(value = "/professor/writeDataBoard", method={RequestMethod.POST})
-    public ModelAndView writeDataBoard(HttpServletRequest req, @RequestParam("filename") List<MultipartFile> multiFileList, @ModelAttribute DataBoardDTO dto, BindingResult result) throws IOException {
+    public ModelAndView writeDataBoard(int prof_id, HttpServletRequest req, @RequestParam("filename") List<MultipartFile> multiFileList, @ModelAttribute DataBoardDTO dto, BindingResult result) throws IOException {
             if (result.hasErrors()) {
 //                dto.setDBoard_img1("");
 //                dto.setDBoard_img2("");
@@ -212,7 +243,16 @@ public class ProfessorController {
 //        }
 //        return "message";
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("/professor/writeDataBoard");
+        mav.addObject("prof_id", prof_id);
+        mav.setViewName("/professor/writeDataBoard?prof_id=" + prof_id);
+        return mav;
+    }
+
+    @GetMapping("/professor/listDataBoard")
+    public ModelAndView listDataBoard(int prof_id) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("prof_id", prof_id);
+        mav.setViewName("professor/listDataBoard");
         return mav;
     }
 }

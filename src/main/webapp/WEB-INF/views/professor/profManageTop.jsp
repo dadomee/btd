@@ -92,8 +92,9 @@
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+            <c:set var ="prof_id" value ="${param.prof_id}"/>
             <div class="app-brand demo">
-                <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/professor/professorManagement?prof_id=1">
+                <a class="navbar-brand brand-logo" href="${pageContext.request.contextPath}/professor/profManagement?prof_id=${prof_id}">
                     <img src="../bootstrap/admin/images/logo-header.png" style="width:200px; height:40px;" alt="logo" />
                 </a>
                 <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -128,7 +129,7 @@
 
                 <!-- Dashboard -->
                 <li class="menu-item active py-3">
-                    <a href="${pageContext.request.contextPath}/professor/professorManagement?prof_id=1" class="menu-link">
+                    <a href="${pageContext.request.contextPath}/professor/profManagement?prof_id=${prof_id}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">홈</div>
                     </a>
@@ -143,7 +144,7 @@
 
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="#" class="menu-link">
+                            <a href="${pageContext.request.contextPath}/professor/profUpdateInfo?prof_id=${prof_id}" class="menu-link">
                                 <div data-i18n="Without menu">개인 정보 수정</div>
                             </a>
                         </li>
@@ -165,12 +166,12 @@
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="${pageContext.request.contextPath}/professor/writeDataBoard" class="menu-link">
+                            <a href="${pageContext.request.contextPath}/professor/writeDataBoard?prof_id=${prof_id}" class="menu-link">
                                 <div data-i18n="Account">자료 등록</div>
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="${pageContext.request.contextPath}/professor/listDataBoard" class="menu-link">
+                            <a href="${pageContext.request.contextPath}/professor/listDataBoard?prof_id=${prof_id}" class="menu-link">
                                 <div data-i18n="Account">자료실 목록</div>
                             </a>
                         </li>
@@ -275,7 +276,7 @@
 <%--                        <a href="${pageContext.request.contextPath}/student"> <i class="bx bx-cog me-2"></i>&nbsp&nbsp </a>--%>
                         <!-- 로그아웃 -->
                     <li>
-                        <a href="#"> <i class="bx bx-power-off me-2"></i> </a>
+                        <a href="/"> <i class="bx bx-power-off me-2"></i></a>
                         </li>
                     </ul>
                         <!-- User -->

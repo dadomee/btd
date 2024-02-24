@@ -53,9 +53,10 @@
 <header id="header" class="fixed-top">
     <ul class="navbar-nav navbar-nav-right" style="position : relative; left : 1500px;">
         <li class="nav-item nav-logout d-none d-lg-block">
-            <a class="nav-link" href="${pageContext.request.contextPath}/professor/professorManagement?prof_id=1">
-               관리 페이지
-            </a>
+            <c:set var ="prof_id" value ="${param.prof_id}"/>
+<%--            <a class="nav-link" href="${pageContext.request.contextPath}/professor/professorManagement?prof_id=${prof_id}">--%>
+<%--               교수 전용 페이지--%>
+<%--            </a>--%>
             <a class="nav-link" href="#">
                 <i class="mdi mdi-power">&nbsp;sign in</i>
             </a>
@@ -70,15 +71,17 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="/">메인페이지</a></li>
-                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/professorInfo?prof_id=1">교수소개</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/profInfo?prof_id=${prof_id}">교수소개</a></li>
                 <li class="dropdown"><a href="#"><span>강의목록</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">test</a></li>
-                        <li><a href="#">test</a></li>
+                        <c:forEach var="profSub" items="${param.profSub}">
+                            <li><a href="#">${profSub}</a></li>
+                        </c:forEach>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="#">자료실</a></li>
                 <li><a class="nav-link scrollto" href="#">학습상담</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/profManagement?prof_id=${prof_id}">교수 전용 페이지</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
