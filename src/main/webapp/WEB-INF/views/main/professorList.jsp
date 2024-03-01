@@ -15,7 +15,6 @@
 <body>
 <br><br><br><br><br>
     <main id="main">
-
 <%--        <!-- ======= Breadcrumbs ======= -->--%>
 <%--        <section id="breadcrumbs" class="breadcrumbs">--%>
 <%--            <div class="container">--%>
@@ -25,7 +24,6 @@
 
 <%--            </div>--%>
 <%--        </section><!-- End Breadcrumbs -->--%>
-
         <!-- ======= Portfolio Details Section ======= -->
         <section id="portfolio-details" class="portfolio-details">
             <div class="container">
