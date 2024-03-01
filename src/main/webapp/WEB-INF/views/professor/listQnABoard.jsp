@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: bc102
-  Date: 2024-02-17
-  Time: 오후 4:21
+  Date: 2024-03-01
+  Time: 오후 6:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,19 +13,18 @@
     <jsp:include page="profManageTop.jsp" flush="false">
         <jsp:param name="prof_id" value="${prof_id}"/>
     </jsp:include>
-    <title>자료실 목록</title>
+    <title>학습상담 게시판</title>
 </head>
 <body>
 <section id="services" class="services">
     <div class="container">
-    <br>
+        <br>
         <div class="section-title">
-            <h4>자료실</h4>
+            <h4>학습상담</h4>
         </div>
         <div class="card">
             <div class="card-body">
-                <a href="${pageContext.request.contextPath}/professor/writeDataBoard?prof_id=${prof_id}" class="btn btn-sm btn-outline-primary">글 등록</a>
-
+                <h4 class="card-title"></h4>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -61,4 +60,3 @@
 </body>
 </html>
 <jsp:include page="profManageBottom.jsp" flush="false"/>
-

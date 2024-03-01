@@ -18,6 +18,7 @@ public class DataBoardDTO {
     private String dBoard_content;      // 자료실 게시판 내용
     private int prof_id;                // 작성자
     private int dBoard_view;            // 조회수
+    private Date dBoard_regdate;        // 작성일
     private String dBoard_file1;        // 파일1
     private String dBoard_file2;        // 파일2
     private String dBoard_file3;        // 파일3

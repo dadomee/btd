@@ -15,7 +15,6 @@
 <body>
 <br><br><br><br><br>
     <main id="main">
-
 <%--        <!-- ======= Breadcrumbs ======= -->--%>
 <%--        <section id="breadcrumbs" class="breadcrumbs">--%>
 <%--            <div class="container">--%>
@@ -25,15 +24,14 @@
 
 <%--            </div>--%>
 <%--        </section><!-- End Breadcrumbs -->--%>
-
         <!-- ======= Portfolio Details Section ======= -->
         <section id="portfolio-details" class="portfolio-details">
             <div class="container">
-                <div class="portfolio-info">
+                <div class="portfolio-info" align="center">
                     <c:forEach var="profList" items="${profList}">
                 <div class="row gy-2">
                     <div class="col-lg-2">
-                        <div class="portfolio-details-slider swiper" style="height:300px;">
+                        <div class="portfolio-details-slider swiper" style="height:300px;position:relative; left:150px;">
                             <div class="swiper-wrapper align-items-center">
                                 <div class="swiper-slide" style="width:150px; height:300px; position:relative; top:30px;">
                                     <img src="../bootstrap/admin/images/faces/${profList.prof_img}" alt="교수사진">
@@ -43,16 +41,17 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="portfolio-description" style="position:relative; bottom:30px;">
+                        <div class="portfolio-description" style="position:relative; bottom:30px; left:150px;">
                             <br>
-                            <h3>${profList.prof_name} 교수</h3>
-                            <h5>이메일 : ${profList.prof_email}</h5>
-                            <h5>연락처 : ${profList.prof_tel}</h5>
+                            <h4>${profList.prof_name} 교수</h4>
+                            <hr class="border border-secondary border-3 opacity-30" style="width:700px;">
+                            <h6>이메일 : ${profList.prof_email}</h6>
+                            <h6>연락처 : ${profList.prof_tel}</h6>
                             <h6>담당전공 : ${profList.depart_name}</h6>
                             <h6>담당과목 : ${profList.sub_name}</h6>
                         </div>
                     </div>
-                    <section id="features" class="features" style="width:50px; height:50px;">
+                    <section id="features" class="features" style="width:50px; height:50px; position:relative; left:150px;">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-1 col-md-1 mt-1">

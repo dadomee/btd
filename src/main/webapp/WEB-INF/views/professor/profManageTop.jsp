@@ -83,6 +83,10 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../bootstrap/student/assets/js/config.js"></script>
+
+    <link href="../bootstrap/mainPage/css/style.css" rel="stylesheet">
+    <link href="../bootstrap/mainPage/vendor/remixicon/remixicon.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -165,14 +169,19 @@
                         <div data-i18n="Account Settings">수업 관리</div>
                     </a>
                     <ul class="menu-sub">
+<%--                        <li class="menu-item">--%>
+<%--                            <a href="${pageContext.request.contextPath}/professor/writeDataBoard?prof_id=${prof_id}" class="menu-link">--%>
+<%--                                <div data-i18n="Account">자료실 등록</div>--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
                         <li class="menu-item">
-                            <a href="${pageContext.request.contextPath}/professor/writeDataBoard?prof_id=${prof_id}" class="menu-link">
-                                <div data-i18n="Account">자료 등록</div>
+                            <a href="${pageContext.request.contextPath}/professor/listDataBoard?prof_id=${prof_id}" class="menu-link">
+                                <div data-i18n="Account">자료실 게시판</div>
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="${pageContext.request.contextPath}/professor/listDataBoard?prof_id=${prof_id}" class="menu-link">
-                                <div data-i18n="Account">자료실 목록</div>
+                            <a href="${pageContext.request.contextPath}/professor/listQnABoard?prof_id=${prof_id}" class="menu-link">
+                                <div data-i18n="Account">학습상담 게시판</div>
                             </a>
                         </li>
                         <li class="menu-item">
@@ -184,22 +193,22 @@
                             <a href="#" class="menu-link">
                                 <div data-i18n="Connections">출석 수업</div>
                             </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                <div data-i18n="Connections">대체 시험</div>
-                            </a>
-                        </li>
+<%--                        </li>--%>
+<%--                        <li class="menu-item">--%>
+<%--                            <a href="#" class="menu-link">--%>
+<%--                                <div data-i18n="Connections">대체 시험</div>--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
                         <li class="menu-item">
                             <a href="#" class="menu-link">
                                 <div data-i18n="Connections">중간/과제물 시험</div>
                             </a>
                         </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                <div data-i18n="Connections">기말 시험</div>
-                            </a>
-                        </li>
+<%--                        <li class="menu-item">--%>
+<%--                            <a href="#" class="menu-link">--%>
+<%--                                <div data-i18n="Connections">기말 시험</div>--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
                     </ul>
                 </li>
                 <li class="menu-item open">
@@ -276,7 +285,10 @@
 <%--                        <a href="${pageContext.request.contextPath}/student"> <i class="bx bx-cog me-2"></i>&nbsp&nbsp </a>--%>
                         <!-- 로그아웃 -->
                     <li>
-                        <a href="/"> <i class="bx bx-power-off me-2"></i></a>
+                        <a href="/">
+                            <i class="bx bx-power-off me-2"></i>
+                            home
+                        </a>
                         </li>
                     </ul>
                         <!-- User -->

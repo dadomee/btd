@@ -79,8 +79,8 @@
                         </c:forEach>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#">자료실</a></li>
-                <li><a class="nav-link scrollto" href="#">학습상담</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/profDataBoard?prof_id=${prof_id}">자료실</a></li>
+                <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/profQnABoard?prof_id=${prof_id}">학습상담</a></li>
                 <li><a class="nav-link scrollto" href="${pageContext.request.contextPath}/professor/profManagement?prof_id=${prof_id}">교수 전용 페이지</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
