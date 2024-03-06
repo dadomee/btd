@@ -212,8 +212,8 @@
                 </a>
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">재학,복학,휴학 관리</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="main.jsp">성적 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/studentStatus">재학,복학,휴학 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageGrade">성적 관리</a></li>
                     </ul>
                 </div>
             </li>
@@ -259,8 +259,8 @@
                 </a>
                 <div class="collapse" id="classAndTest">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageRegister">수강 신청 관리</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageTest">시험 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageRegSubject">수강 신청 관리</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/admin/manageFinals">시험 관리</a></li>
                     </ul>
                 </div>
             </li>
