@@ -61,4 +61,10 @@ public class MainPageService implements MainPageDAO {
     public NoticeDTO noticeContent(int notice_id) {
         return sqlSession.selectOne("noticeContent", notice_id);
     }
+
+    // 공지사항 페이지네이션 게시글 수
+    public int getCountBoard(){
+        int res = sqlSession.selectOne("getCountBoard");
+        return res;
+    }
 }
