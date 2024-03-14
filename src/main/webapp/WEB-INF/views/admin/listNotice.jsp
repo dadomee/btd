@@ -17,16 +17,18 @@
 <body>
 <div class="main-panel">
     <div class="content-wrapper">
-        <div class="card">
+        <div class="col-10 grid-margin stretch-card">
+            <div class="card">
             <div class="card-body">
-                <h4 class="card-title"></h4>
+                <h4 class="card-title">공지사항 목록</h4>
+                <div align="right"><a href="/admin/writeNotice"><button type="button" class="btn btn-outline-primary btn-fw btn-sm">글 작성</button></a></div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                         <tr align="center">
-                            <th>글번호</th>
-                            <%--                            <th>공지타입</th>--%>
-                            <th>제목</th>
+                            <th class="col-1">글번호</th>
+                            <th class="col-2">공지타입</th>
+                            <th class="col-5">제목</th>
                             <th>작성일</th>
                             <th>조회수</th>
                             <th>파일</th>
@@ -36,9 +38,9 @@
                         <c:forEach var="noticeList" items="${noticeList}">
                             <tr align="center">
                                 <td>${noticeList.notice_id}</td>
-                                    <%--                            <td>[${noticeList.notice_type}]</td>--%>
+                                <td>[${noticeList.notice_type}]</td>
                                 <td>
-                                    <a href="../main/notice?notice_id=${noticeList.notice_id}" class="link-dark">
+                                    <a href="${pageContext.request.contextPath}/admin/notice?notice_id=${noticeList.notice_id}" class="link-dark">
                                         [${noticeList.notice_type}]&nbsp;${noticeList.notice_title}
                                     </a>
                                 </td>
@@ -55,33 +57,34 @@
                     </table>
                 </div>
             </div>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <c:if test="${count>0}">
-                <c:if test="${startPage > pageBlock}">
-                    <li class="page-item">
-                        <a class="page-link" href="${pageContext.request.contextPath}/admin/listNotice?pageNum=${startPage-pageBlock}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                </c:if>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <c:if test="${count>0}">
+                        <c:if test="${startPage > pageBlock}">
+                            <li class="page-item">
+                                <a class="page-link" href="${pageContext.request.contextPath}/admin/listNotice?pageNum=${startPage-pageBlock}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        </c:if>
 
-                <c:forEach var="i" begin="${startPage}" end="${endPage}">
-                    <li class="page-item">
-                        <a class="page-link" href="${pageContext.request.contextPath}/admin/listNotice?pageNum=${i}">${i}</a></li>
-                </c:forEach>
+                        <c:forEach var="i" begin="${startPage}" end="${endPage}">
+                            <li class="page-item">
+                                <a class="page-link" href="${pageContext.request.contextPath}/admin/listNotice?pageNum=${i}">${i}</a></li>
+                        </c:forEach>
 
-                <c:if test="${endPage < pageCount}">
-                    <li class="page-item">
-                        <a class="page-link" href="${pageContext.request.contextPath}/admin/listNotice?pageNum=${startPage+pageBlock}" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </c:if>
-            </c:if>
-        </ul>
-    </nav>
-    </div>
+                        <c:if test="${endPage < pageCount}">
+                            <li class="page-item">
+                                <a class="page-link" href="${pageContext.request.contextPath}/admin/listNotice?pageNum=${startPage+pageBlock}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </c:if>
+                    </c:if>
+                </ul>
+            </nav>
+        </div>
+        </div>
     </div>
 </body>
 </html>

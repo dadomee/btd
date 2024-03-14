@@ -58,5 +58,6 @@ public class AdminService implements AdminDAO {
         int res = sqlSession.insert("insertSub",dto);
          return res;
     }
-
+    public List<NoticeDTO> getNoticeType(){
+        return sqlSession.selectList("getNoticeType"); }
 }

@@ -12,12 +12,49 @@
 <html lang="en">
 <head>
     <title>공지사항 작성</title>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script>
+        // 페이지 새로고침 시 컨펌 창 표시
+        window.onbeforeunload = function() {
+            return "이 페이지를 떠나시겠습니까?";
+        };
+    </script>
+    <script>
+        window.onload = function(){
+            ck = CKEDITOR.replace("editor");
+        };
+    </script>
 </head>
-<body>
 <div class="main-panel">
     <div class="content-wrapper">
+        <div class="col-10 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="notice_title" placeholder="글 제목">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control form-control-sm" name="notice_type">
+                            <option>공지사항 타입을 선택하세요.</option>
+                            <c:forEach var="nt" items="${notice}"><option value="${nt.notice_type}">${nt.notice_type}</option></c:forEach>
+                        </select>
+                    </div>
+                    <div>
+                     <textarea name="content" id="editor" name="notice_content"></textarea>
+                     </div>
+                    <br>
+                    <br>
+                    <div align="center">
+                    <button type="button" class="btn btn-outline-primary btn-icon-text">
+                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Submit </button>
+                    <button type="button" class="btn btn-outline-warning btn-icon-text">
+                        <i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</body>
-</html>
+</div>
+<div>
 <%@include file="bottom.jsp"%>

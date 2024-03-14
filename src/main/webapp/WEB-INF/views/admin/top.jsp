@@ -300,7 +300,6 @@
             </li>
         </ul>
     </nav>
-
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../bootstrap/admin/vendors/js/vendor.bundle.base.js"></script>

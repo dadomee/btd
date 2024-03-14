@@ -53,4 +53,7 @@
     <select id="getProfId" parameterType="String" resultType="int">
         select prof_id from professor_tb where prof_name = #{prof_name}
     </select>
+    <select id="getNoticeType" resultType="NoticeDTO">
+        select notice_type from notice_tb
+    </select>
 </mapper>

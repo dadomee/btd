@@ -16,12 +16,7 @@
     </div>
 </footer>
 <!-- partial -->
-</div>
-<!-- main-panel ends -->
-</div>
 <!-- page-body-wrapper ends -->
-</div>
-</div>
 <!-- container-scroller -->
 <!-- plugins:js -->
 <script src="../bootstrap/admin/vendors/js/vendor.bundle.base.js"></script>
@@ -39,5 +34,3 @@
 <script src="../bootstrap/admin/js/dashboard.js"></script>
 <script src="../bootstrap/admin/js/todolist.js"></script>
 <!-- end custom js for this page -->
-</body>
-</html>

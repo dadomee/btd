@@ -274,6 +274,9 @@ public class AdminController {
     @GetMapping("admin/writeNotice")
     public ModelAndView writeNotice(){
         ModelAndView mav = new ModelAndView();
+        List<NoticeDTO> noticeType = adminService.getNoticeType();
+        mav.addObject("notice",noticeType);
+        mav.setViewName("admin/writeNotice");
         return mav;
     }
     @PostMapping("admin/writeNotice")
