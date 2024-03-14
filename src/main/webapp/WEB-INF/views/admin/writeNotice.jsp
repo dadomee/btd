@@ -54,7 +54,7 @@
                     <div align="center">
                     <button type="button" class="btn btn-outline-primary btn-icon-text">
                         <i class="mdi mdi-file-check btn-icon-prepend" type="submit"></i> Submit </button>
-                    <button type="button" class="btn btn-outline-warning btn-icon-text" onclick="window.location='${pageContext.request.contextPath}/admingit /listNotice'">
+                    <button type="button" class="btn btn-outline-warning btn-icon-text" onclick="window.location='${pageContext.request.contextPath}/admin/listNotice'">
                         <i class="mdi mdi-reload btn-icon-prepend"></i> back </button>
                     </div>
                 </div>
