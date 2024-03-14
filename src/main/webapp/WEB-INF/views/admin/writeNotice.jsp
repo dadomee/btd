@@ -24,12 +24,15 @@
             ck = CKEDITOR.replace("editor");
         };
     </script>
+
 </head>
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="col-10 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    <form name="f" action="write_board.do?mode=${mode}" method="post"
+                          onsubmit="return check()" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" class="form-control" name="notice_title" placeholder="글 제목">
                     </div>
@@ -43,14 +46,19 @@
                      <textarea name="content" id="editor" name="notice_content"></textarea>
                      </div>
                     <br>
+                                <div class="input-group col-xs-12">
+                                    <input type="file"  name="filename" class="form-control file-upload-info" placeholder="파일을 첨부하세요"  multiple="multiple">
+                                   </div>
                     <br>
+                    </form>
                     <div align="center">
                     <button type="button" class="btn btn-outline-primary btn-icon-text">
-                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Submit </button>
-                    <button type="button" class="btn btn-outline-warning btn-icon-text">
-                        <i class="mdi mdi-reload btn-icon-prepend"></i> Reset </button>
+                        <i class="mdi mdi-file-check btn-icon-prepend" type="submit"></i> Submit </button>
+                    <button type="button" class="btn btn-outline-warning btn-icon-text" onclick="window.location='${pageContext.request.contextPath}/admingit /listNotice'">
+                        <i class="mdi mdi-reload btn-icon-prepend"></i> back </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
